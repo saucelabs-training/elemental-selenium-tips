@@ -6,16 +6,17 @@ They're currently only available in Ruby. But for each one that gets converted t
 
 To submit your entry:
 
-+ fork the repo
-+ find a tip you want to port
-+ add a folder to the tip for the programming language you want to add (e.g., `javascript`, `java`, `csharp`, `php`, `python`, etc.)
-+ write the code example
-+ submit a pull request
+1. Fork the repo
+2. Choose a tip to port
+3. Add a folder to it for the language you want (e.g., `javascript`, `java`, `csharp`, `php`, `python`, etc.)
+4. Write the code example
+5. Submit a pull request
 
 
 Happy Testing!
-
-
+  
+  
+  
 Cheers,  
 Dave H  
 [@TourDeDave](https://twitter.com/tourdedave/)  
