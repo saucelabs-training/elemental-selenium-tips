@@ -1,0 +1,86 @@
+2014/10/02 08:42:58 INFO  - jmeter.util.JMeterUtils: Setting Locale to en_US 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: Loading user properties from: /Users/tourdedave/Dropbox/_dev/elemental-selenium/lib/tips/68-load-testing-revisited/apache-jmeter-2.11/bin/user.properties 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: Loading system properties from: /Users/tourdedave/Dropbox/_dev/elemental-selenium/lib/tips/68-load-testing-revisited/apache-jmeter-2.11/bin/system.properties 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: Copyright (c) 1998-2014 The Apache Software Foundation 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: Version 2.11 r1554548 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: java.version=1.7.0_60 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: os.name=Mac OS X 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: os.arch=x86_64 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: os.version=10.9.4 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: file.encoding=UTF-8 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: Default Locale=English (United States) 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: JMeter  Locale=English (United States) 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: JMeterHome=/Users/tourdedave/Dropbox/_dev/elemental-selenium/lib/tips/68-load-testing-revisited/apache-jmeter-2.11 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: user.dir  =/Users/tourdedave/Dropbox/_dev/elemental-selenium/lib/tips/68-load-testing-revisited 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: PWD       =/Users/tourdedave/Dropbox/_dev/elemental-selenium/lib/tips/68-load-testing-revisited 
+2014/10/02 08:42:58 ERROR - jmeter.util.JMeterUtils: Unable to get local host IP address. 
+2014/10/02 08:42:58 ERROR - jmeter.util.JMeterUtils: Unable to get local host IP address. 
+2014/10/02 08:42:58 ERROR - jmeter.util.JMeterUtils: Unable to get local host IP address. 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: IP: null Name: null FullName: null 
+2014/10/02 08:42:58 INFO  - jmeter.services.FileServer: Default base='/Users/tourdedave/Dropbox/_dev/elemental-selenium/lib/tips/68-load-testing-revisited' 
+2014/10/02 08:42:58 INFO  - jmeter.services.FileServer: Set new base='/Users/tourdedave/Dropbox/_dev/elemental-selenium/lib/tips/68-load-testing-revisited/.' 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: Loading file: ./jmeter.jmx 
+2014/10/02 08:42:58 INFO  - jmeter.save.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2 
+2014/10/02 08:42:58 INFO  - jmeter.save.SaveService: Using SaveService properties file encoding UTF-8 
+2014/10/02 08:42:58 INFO  - jmeter.save.SaveService: Using SaveService properties version 2.6 
+2014/10/02 08:42:58 INFO  - jmeter.save.SaveService: Using SaveService properties file version 1554411 
+2014/10/02 08:42:58 INFO  - jmeter.save.SaveService: All converter versions present and correct 
+2014/10/02 08:42:58 INFO  - jmeter.protocol.http.control.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_ 
+2014/10/02 08:42:58 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Cannot find .className property for htmlParser, using default 
+2014/10/02 08:42:58 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/html is  
+2014/10/02 08:42:58 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for application/xhtml+xml is  
+2014/10/02 08:42:58 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for application/xml is  
+2014/10/02 08:42:58 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/xml is  
+2014/10/02 08:42:58 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: Creating summariser <summary> 
+2014/10/02 08:42:58 INFO  - jmeter.engine.StandardJMeterEngine: Listeners will be started after enabling running version 
+2014/10/02 08:42:58 INFO  - jmeter.engine.StandardJMeterEngine: To revert to the earlier behaviour, define jmeterengine.startlistenerslater=false 
+2014/10/02 08:42:58 INFO  - jmeter.engine.StandardJMeterEngine: Running the test! 
+2014/10/02 08:42:58 ERROR - jmeter.samplers.SampleEvent: Cannot obtain local host name java.net.UnknownHostException: argo: argo: nodename nor servname provided, or not known 
+2014/10/02 08:42:58 INFO  - jmeter.samplers.SampleEvent: List of sample_variables: [] 
+2014/10/02 08:42:58 INFO  - jmeter.samplers.SampleEvent: List of sample_variables: [] 
+2014/10/02 08:42:58 INFO  - jmeter.engine.util.CompoundVariable: Note: Function class names must contain the string: '.functions.' 
+2014/10/02 08:42:58 INFO  - jmeter.engine.util.CompoundVariable: Note: Function class names must not contain the string: '.gui.' 
+2014/10/02 08:42:58 INFO  - jmeter.JMeter: Running test (1412253778827) 
+2014/10/02 08:42:58 INFO  - jmeter.engine.StandardJMeterEngine: Starting ThreadGroup: 1 : ThreadGroup 
+2014/10/02 08:42:58 INFO  - jmeter.engine.StandardJMeterEngine: Starting 1 threads for group ThreadGroup. 
+2014/10/02 08:42:58 INFO  - jmeter.engine.StandardJMeterEngine: Thread will continue on error 
+2014/10/02 08:42:58 INFO  - jmeter.threads.ThreadGroup: Starting thread group number 1 threads 1 ramp-up 1 perThread 1000.0 delayedStart=true 
+2014/10/02 08:42:58 INFO  - jmeter.threads.ThreadGroup: Started thread group number 1 
+2014/10/02 08:42:58 INFO  - jmeter.engine.StandardJMeterEngine: All thread groups have been started 
+2014/10/02 08:42:58 INFO  - jmeter.threads.JMeterThread: jmeterthread.startearlier=true (see jmeter.properties) 
+2014/10/02 08:42:58 INFO  - jmeter.threads.JMeterThread: Running PostProcessors in forward order 
+2014/10/02 08:42:58 INFO  - jmeter.samplers.SampleResult: Note: Sample TimeStamps are START times 
+2014/10/02 08:42:58 INFO  - jmeter.samplers.SampleResult: sampleresult.default.encoding is set to ISO-8859-1 
+2014/10/02 08:42:58 INFO  - jmeter.samplers.SampleResult: sampleresult.useNanoTime=true 
+2014/10/02 08:42:58 INFO  - jmeter.samplers.SampleResult: sampleresult.nanoThreadSleep=5000 
+2014/10/02 08:42:58 INFO  - jmeter.threads.JMeterThread: Thread started: ThreadGroup 1-1 
+2014/10/02 08:42:58 WARN  - jmeter.protocol.http.sampler.HTTPHCAbstractImpl: Cannot determine localhost name, and httpclient.localaddress was not specified 
+2014/10/02 08:42:58 INFO  - jmeter.protocol.http.sampler.HTTPHCAbstractImpl: Local host =  
+2014/10/02 08:42:58 INFO  - jmeter.protocol.http.sampler.HTTPHC4Impl: HTTP request retry count = 0 
+2014/10/02 08:42:58 INFO  - jmeter.protocol.http.sampler.HTTPHC4Impl: Setting up HTTPS TrustAll scheme 
+2014/10/02 08:42:58 INFO  - jmeter.util.JsseSSLManager: Using default SSL protocol: TLS 
+2014/10/02 08:42:58 INFO  - jmeter.util.JsseSSLManager: SSL session context: per-thread 
+2014/10/02 08:43:00 INFO  - jmeter.reporters.Summariser: summary +      1 in     1s =    1.1/s Avg:   895 Min:   895 Max:   895 Err:     0 (0.00%) Active: 1 Started: 1 Finished: 0 
+2014/10/02 08:43:15 ERROR - jmeter.protocol.http.control.HC4CookieHandler: Unable to add the cookie org.apache.http.cookie.MalformedCookieException: Negative max-age attribute: -1
+	at org.apache.http.impl.cookie.BasicMaxAgeHandler.parse(BasicMaxAgeHandler.java:63)
+	at org.apache.http.impl.cookie.CookieSpecBase.parse(CookieSpecBase.java:93)
+	at org.apache.http.impl.cookie.BestMatchSpec.parse(BestMatchSpec.java:135)
+	at org.apache.jmeter.protocol.http.control.HC4CookieHandler.addCookieFromHeader(HC4CookieHandler.java:91)
+	at org.apache.jmeter.protocol.http.control.CookieManager.addCookieFromHeader(CookieManager.java:333)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.saveConnectionCookies(HTTPHC4Impl.java:1234)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:379)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:74)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1105)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1094)
+	at org.apache.jmeter.threads.JMeterThread.process_sampler(JMeterThread.java:429)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:257)
+	at java.lang.Thread.run(Thread.java:745)
+
+2014/10/02 08:43:30 INFO  - jmeter.reporters.Summariser: summary +    119 in  31.2s =    3.8/s Avg:   500 Min:    49 Max: 19487 Err:    21 (17.65%) Active: 1 Started: 1 Finished: 0 
+2014/10/02 08:43:30 INFO  - jmeter.reporters.Summariser: summary =    120 in  31.2s =    3.8/s Avg:   503 Min:    49 Max: 19487 Err:    21 (17.50%) 
+2014/10/02 08:43:59 INFO  - jmeter.threads.JMeterThread: Thread finished: ThreadGroup 1-1 
+2014/10/02 08:43:59 INFO  - jmeter.engine.StandardJMeterEngine: Notifying test listeners of end of test 
+2014/10/02 08:43:59 INFO  - jmeter.reporters.Summariser: summary +    223 in  30.1s =    7.4/s Avg:   260 Min:    46 Max:  3919 Err:    39 (17.49%) Active: 0 Started: 1 Finished: 1 
+2014/10/02 08:43:59 INFO  - jmeter.reporters.Summariser: summary =    343 in  60.2s =    5.7/s Avg:   345 Min:    46 Max: 19487 Err:    60 (17.49%) 

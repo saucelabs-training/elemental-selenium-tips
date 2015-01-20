@@ -1,0 +1,40 @@
+{
+  "uid" : "e62cf6fa5d5be5fd",
+  "name" : "fails",
+  "title" : "Fails",
+  "time" : {
+    "start" : 1405458122150,
+    "stop" : 1405458115134,
+    "duration" : -7016
+  },
+  "summary" : {
+    "attachments" : 1,
+    "steps" : 0
+  },
+  "failure" : {
+    "message" : "\nexpected: false\n got: true\n(compared using eql?)\n",
+    "stackTrace" : "/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/metadata.rb:185:in `for_example&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/example.rb:81:in `initialize&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/example_group.rb:65:in `new&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/example_group.rb:65:in `it&apos;\n/Users/tourdedave/Dropbox/_dev/allure-reporting/reporting_spec.rb:36:in `block in &lt;top (required)&gt;&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/example_group.rb:242:in `module_eval&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/example_group.rb:242:in `subclass&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/example_group.rb:228:in `describe&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/dsl.rb:18:in `describe&apos;\n/Users/tourdedave/Dropbox/_dev/allure-reporting/reporting_spec.rb:29:in `&lt;top (required)&gt;&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `load&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `block in load_spec_files&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `each&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `load_spec_files&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/command_line.rb:22:in `run&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/runner.rb:80:in `run&apos;\n/Users/tourdedave/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rspec-core-2.13.1/lib/rspec/core/runner.rb:17:in `block in autorun&apos;"
+  },
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "FAILED",
+  "steps" : [ ],
+  "attachments" : [ {
+    "title" : "screenshot",
+    "source" : "75c7695b73a135b681dc25ef360d1f4e713badfa6aad70cd186e27fe311f2b5c-attachment.png",
+    "type" : "image/png",
+    "size" : 38291,
+    "uid" : "a8c47c139f50d28"
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Without feature"
+  }, {
+    "name" : "story",
+    "value" : "Without story"
+  } ],
+  "parameters" : [ ]
+}

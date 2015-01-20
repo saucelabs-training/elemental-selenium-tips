@@ -1,0 +1,3 @@
+#!/bin/bash
+ALLURE_HOME=${ALLURE_HOME:-"."}
+java -jar $ALLURE_HOME/allure-cli.jar $@

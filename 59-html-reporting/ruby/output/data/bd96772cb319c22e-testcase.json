@@ -1,0 +1,31 @@
+{
+  "uid" : "bd96772cb319c22e",
+  "name" : "passes",
+  "title" : "Passes",
+  "time" : {
+    "start" : 1405458115134,
+    "stop" : 1405458108466,
+    "duration" : -6668
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "steps" : [ ],
+  "attachments" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "feature",
+    "value" : "Without feature"
+  }, {
+    "name" : "story",
+    "value" : "Without story"
+  } ],
+  "parameters" : [ ]
+}
