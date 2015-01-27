@@ -1,1 +1,8 @@
 .DS_Store
+
+# python
+__pycache__
+dist
+*.egg-info
+*.pyc
+
