@@ -1,5 +1,7 @@
 /*Logic Copied from Dave Haufnerr's Upload File Ruby Test
  * Rewritten in C# using Selenium and MS Test
+ * 2/5/2015
+ * Jonathan Taylor
 */
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
