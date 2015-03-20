@@ -24,7 +24,7 @@ public class DownloadFileRevisited {
     }
 
     @Test
-    public void dropdownTest() throws IOException {
+    public void downloadFileRevisitedTest() throws IOException {
         driver.get("http://the-internet.herokuapp.com/download");
         String link = driver.findElement(By.cssSelector(".example a:nth-of-type(2)")).getAttribute("href");
 
