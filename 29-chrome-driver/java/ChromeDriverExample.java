@@ -13,7 +13,7 @@ public class ChromeDriverExample {
 
     @Before
     public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "vendor/chrome-driver-2.14/chromedriver_linux64");
+        System.setProperty("webdriver.chrome.driver", "vendor/chrome-driver-2.15/chromedriver_linux64");
         driver = new ChromeDriver();
     }
 

@@ -34,7 +34,7 @@ public class Download {
         driver = new FirefoxDriver(profile);
 
 //        Chrome
-//        System.setProperty("webdriver.chrome.driver", "vendor/chrome-driver-2.14/chromedriver_linux64");
+//        System.setProperty("webdriver.chrome.driver", "vendor/chrome-driver-2.15/chromedriver_linux64");
 //        ChromeOptions options = new ChromeOptions();
 //        Map<String, Object> prefs = new HashMap<>();
 //        prefs.put("profile.default_content_settings.popups", 0);
