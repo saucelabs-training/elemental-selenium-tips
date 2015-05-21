@@ -15,6 +15,11 @@ public class ChromeDriverExample {
     public void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver", "vendor/chrome-driver-2.15/chromedriver_linux64");
         driver = new ChromeDriver();
+
+//    Option 2
+//    Start the chromedriver in your terminal
+//    Connect to it via Selenium Remote, like so:
+//        driver = new RemoteWebDriver(new URL("http://localhost:9515"), DesiredCapabilities.chrome());
     }
 
     @Test
