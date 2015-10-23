@@ -15,6 +15,9 @@ public class Upload {
         driver = new FirefoxDriver();
     }
 
+    // If uploading to a Grid node or Sauce Labs, check out driver.setFileDetector()
+    // https://saucelabs.com/resources/articles/selenium-file-upload
+
     @Test
     public void uploadFile() throws Exception {
         File file = new File("some-file.txt");
