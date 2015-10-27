@@ -5,10 +5,8 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
 
 public class JavaScriptAlert {
     WebDriver driver;
@@ -21,7 +19,7 @@ public class JavaScriptAlert {
     @Test
     public void JavaScriptAlertTest() {
         driver.get("http://the-internet.herokuapp.com/javascript_alerts");
-        driver.findElement(By.xpath("/html/body/div[2]/div/div/ul/li[2]/button")).click();
+        driver.findElement(By.cssSelector(".example li:nth-child(2) button")).click();
         Alert popup = driver.switchTo().alert();
         popup.accept();
         String result = driver.findElement(By.id("result")).getText();
