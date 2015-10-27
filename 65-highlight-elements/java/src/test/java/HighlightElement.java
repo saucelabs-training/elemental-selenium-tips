@@ -31,19 +31,18 @@ public class HighlightElement {
      */
 
     private void highlightElement(WebElement element, int duration) throws InterruptedException {
-        //store original style so it can be reset later
+        // Store original style so it can be reset later
         String original_style = element.getAttribute("style");
 
-        //style element with red border
+        // Style element with a red border
         js.executeScript(
                 "arguments[0].setAttribute(arguments[1], arguments[2])",
                 element,
                 "style",
                 "border: 2px solid red; border-style: dashed;");
 
-        // keep element highlighted for a spell and then revert
+        // Keep element highlighted for a spell and then revert
         if (duration > 0) {
-            // TODO: implement waitWithoutReason method
             Thread.sleep(duration * 1000);
             js.executeScript(
                     "arguments[0].setAttribute(arguments[1], arguments[2])",
