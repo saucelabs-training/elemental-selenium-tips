@@ -1,1 +1,19 @@
+# Mace
 .DS_Store
+
+# IntelliJ
+.idea/*
+*.iml
+*.iws
+.*.java.swp
+
+# Maven
+log/
+target/
+
+# Selenium
+*.log
+
+# Other
+output/
+*.zip
