@@ -18,17 +18,17 @@ public class Growl {
     @Test
     public void growlTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/");
-        // check for jQuery on the page, add it if need be
+        // Check for jQuery on the page, add it if need be
         js.executeScript("if (!window.jQuery) {" +
                 "var jquery = document.createElement('script'); jquery.type = 'text/javascript';" +
                 "jquery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js';" +
                 "document.getElementsByTagName('head')[0].appendChild(jquery);" +
                 "}");
 
-        // use jQuery to add jquery-growl to the page
+        // Use jQuery to add jquery-growl to the page
         js.executeScript("$.getScript('http://the-internet.herokuapp.com/js/vendor/jquery.growl.js')");
 
-        // use jQuery to add jquery-growl styles to the page
+        // Use jQuery to add jquery-growl styles to the page
         js.executeScript("$('head').append('<link rel=\"stylesheet\" href=\"http://the-internet.herokuapp.com/css/jquery.growl.css\" type=\"text/css\" />');");
 
         // jquery-growl w/ no frills
