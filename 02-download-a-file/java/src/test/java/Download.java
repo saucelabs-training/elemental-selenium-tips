@@ -61,7 +61,7 @@ public class Download {
             // assertTrue does not offer much to go on when there's a failure
             // Thankfully JUnit ships with Hamcrest CoreMatchers
             // https://github.com/junit-team/junit/wiki/Matchers-and-assertthat
-            assertThat(file.length(), not((long) 0));
+            assertThat(file.length(), is(not((long) 0)));
             // outputs:
             // java.lang.AssertionError:
             // Expected: not <0L>
