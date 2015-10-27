@@ -5,11 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.util.List;
-
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 
 public class Checkboxes {
     WebDriver driver;
@@ -35,21 +33,21 @@ public class Checkboxes {
         }
     }
 
+    // The second checkbox on the page is pre-selected
+    // Check that the first checkbox is not pre-selected
     @Test
     public void checkboxOption1Test() throws Exception {
-        // check if 1st checkbox is not checked
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox1 = driver.findElement(By.xpath("/html/body/div[2]/div/div/form/input[1]"));
-        assertThat(checkbox1.isSelected(), is(false));
+        WebElement checkbox = driver.findElement(By.cssSelector("form input:nth-of-type(1)"));
+        assertThat(checkbox.isSelected(), is(false));
     }
 
+    // Check that the second checkbox is pre-selected
     @Test
     public void checkboxOption2Test() throws Exception {
-        // check if 2nd checkbox is checked
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox1 = driver.findElement(By.xpath("/html/body/div[2]/div/div/form/input[2]"));
-        assertThat(checkbox1.isSelected(), is(true));
+        WebElement checkbox = driver.findElement(By.cssSelector("form input:nth-of-type(2)"));
+        assertThat(checkbox.isSelected(), is(true));
     }
 
     @After
