@@ -3,9 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
 public class ChromeDriverExample {
@@ -13,7 +11,8 @@ public class ChromeDriverExample {
 
     @Before
     public void setUp() throws Exception {
-        System.setProperty("webdriver.chrome.driver", "vendor/chrome-driver-2.15/chromedriver_linux64");
+        System.setProperty("webdriver.chrome.driver",
+                System.getProperty("user.dir") + "/../../vendor/chrome-driver-2.15/chromedriver_mac32");
         driver = new ChromeDriver();
 
 //    Option 2
