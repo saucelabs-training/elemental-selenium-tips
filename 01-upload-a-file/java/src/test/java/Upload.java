@@ -19,6 +19,11 @@ public class Upload {
     // If uploading to a Grid node or Sauce Labs, check out driver.setFileDetector()
     // https://saucelabs.com/resources/articles/selenium-file-upload
 
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+
     @Test
     public void uploadFile() throws Exception {
         String filename = "some-file.txt";
@@ -31,8 +36,4 @@ public class Upload {
         assertThat(text, is(equalTo(filename)));
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-    }
 }
