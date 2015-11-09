@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -15,6 +14,11 @@ public class Frames {
     @Before
     public void setUp() throws Exception {
         driver = new FirefoxDriver();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
     }
 
     @Test
@@ -35,10 +39,9 @@ public class Frames {
         editor.sendKeys("Hello World!");
         String afterText = editor.getText();
         assertThat(afterText, not(equalTo((beforeText))));
+        driver.switchTo().defaultContent();
+        assertThat(driver.findElement(By.cssSelector("h3")).getText(),
+                is("An iFrame containing the TinyMCE WYSIWYG Editor"));
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-    }
 }
