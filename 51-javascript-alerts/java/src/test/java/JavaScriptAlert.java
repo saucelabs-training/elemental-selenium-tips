@@ -1,9 +1,9 @@
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -16,6 +16,11 @@ public class JavaScriptAlert {
         driver = new FirefoxDriver();
     }
 
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+
     @Test
     public void JavaScriptAlertTest() {
         driver.get("http://the-internet.herokuapp.com/javascript_alerts");
@@ -26,8 +31,4 @@ public class JavaScriptAlert {
         assertThat(result, is(equalTo("You clicked: Ok")));
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-    }
 }
