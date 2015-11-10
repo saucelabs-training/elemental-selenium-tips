@@ -1,8 +1,3 @@
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpHead;
-import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import java.io.IOException;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpHead;
+import org.apache.http.impl.client.HttpClientBuilder;
 
 public class DownloadFileRevisited {
     WebDriver driver;
@@ -21,10 +19,15 @@ public class DownloadFileRevisited {
         driver = new FirefoxDriver();
     }
 
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+
     @Test
-    public void downloadFileRevisitedTest() throws IOException {
+    public void downloadFileRevisitedTest() throws Exception {
         driver.get("http://the-internet.herokuapp.com/download");
-        String link = driver.findElement(By.cssSelector(".example a:nth-of-type(2)")).getAttribute("href");
+        String link = driver.findElement(By.cssSelector(".example a:nth-of-type(1)")).getAttribute("href");
 
         HttpClient httpClient = HttpClientBuilder.create().build();
         HttpHead request = new HttpHead(link);
@@ -36,8 +39,4 @@ public class DownloadFileRevisited {
         assertThat(contentLength, is(not(0)));
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-    }
 }
