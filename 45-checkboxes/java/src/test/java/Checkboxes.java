@@ -17,6 +17,11 @@ public class Checkboxes {
         driver = new FirefoxDriver();
     }
 
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+
     @Test
     public void checkboxDiscoveryTest() {
         driver.get("http://the-internet.herokuapp.com/checkboxes");
@@ -33,16 +38,14 @@ public class Checkboxes {
         }
     }
 
-    // The second checkbox on the page is pre-selected
-    // Check that the first checkbox is not pre-selected
     @Test
     public void checkboxOption1Test() throws Exception {
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox = driver.findElement(By.cssSelector("form input:nth-of-type(1)"));
-        assertThat(checkbox.isSelected(), is(false));
+        WebElement checkbox = driver.findElement(By.cssSelector("form input:nth-of-type(2)"));
+        assertThat(checkbox.getAttribute("checked"), is(not("null")));
+        assertThat(checkbox.getAttribute("checked"), is("true"));
     }
 
-    // Check that the second checkbox is pre-selected
     @Test
     public void checkboxOption2Test() throws Exception {
         driver.get("http://the-internet.herokuapp.com/checkboxes");
@@ -50,8 +53,4 @@ public class Checkboxes {
         assertThat(checkbox.isSelected(), is(true));
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-    }
 }
