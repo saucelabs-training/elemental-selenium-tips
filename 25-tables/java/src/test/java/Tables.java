@@ -28,8 +28,7 @@ public class Tables {
     }
 
     @Test
-    public void withoutHelpfulMarkup()
-    {
+    public void withoutHelpfulMarkupDuesAscending() {
         driver.get("http://the-internet.herokuapp.com/tables");
 
         // sort dues column in ascending order
@@ -38,29 +37,40 @@ public class Tables {
         // get values from dues column (w/o $)
         List<WebElement> dues = driver.findElements(By.cssSelector("#table1 tbody tr td:nth-of-type(4)"));
         List<Double> dueValues = new LinkedList<Double>();
-        for(WebElement element : dues){
+        for (WebElement element : dues) {
             dueValues.add(Double.parseDouble(element.getText().replace("$", "")));
         }
 
         // check that dues are in ascending order
-        for(int counter = 0; counter < dueValues.size() - 1; counter++){
+        for (int counter = 0; counter < dueValues.size() - 1; counter++) {
             assertThat(dueValues.get(counter), is(lessThanOrEqualTo(dueValues.get(counter + 1))));
         }
+    }
+
+    @Test
+    public void withoutHelpfulMarkupDuesDescending() {
+        driver.get("http://the-internet.herokuapp.com/tables");
 
         // sort dues column in descending order
         driver.findElement(By.cssSelector("#table1 thead tr th:nth-of-type(4)")).click();
+        driver.findElement(By.cssSelector("#table1 thead tr th:nth-of-type(4)")).click();
 
         // get values from dues column (w/o $) again
-        dues = driver.findElements(By.cssSelector("#table1 tbody tr td:nth-of-type(4)"));
-        dueValues = new LinkedList<Double>();
-        for(WebElement element : dues){
+        List<WebElement> dues = driver.findElements(By.cssSelector("#table1 tbody tr td:nth-of-type(4)"));
+        List<Double> dueValues = new LinkedList<Double>();
+        for (WebElement element : dues) {
             dueValues.add(Double.parseDouble(element.getText().replace("$", "")));
         }
 
         // assert dues are in descending order
-        for(int counter = 0; counter < dueValues.size() - 1; counter++){
+        for (int counter = 0; counter < dueValues.size() - 1; counter++) {
             assertThat(dueValues.get(counter), is(greaterThanOrEqualTo(dueValues.get(counter + 1))));
         }
+    }
+
+    @Test
+    public void withoutHelpfulMarkupEmailAscending() {
+        driver.get("http://the-internet.herokuapp.com/tables");
 
         // sort email column in ascending order
         driver.findElement(By.cssSelector("#table1 thead tr th:nth-of-type(3)")).click();
@@ -83,7 +93,7 @@ public class Tables {
     {
         driver.get("http://the-internet.herokuapp.com/tables");
         driver.findElement(By.cssSelector("#table2 thead .dues")).click();
-        List<WebElement> dues = driver.findElements(By.cssSelector("#table2 tbody tr td:nth-of-type(4)"));
+        List<WebElement> dues = driver.findElements(By.cssSelector("#table2 tbody .dues"));
         List<Double> dueValues = new LinkedList<Double>();
         for(WebElement element : dues){
             dueValues.add(Double.parseDouble(element.getText().replace("$", "")));
