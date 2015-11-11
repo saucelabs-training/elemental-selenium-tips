@@ -1,8 +1,8 @@
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Growl {
@@ -15,9 +15,15 @@ public class Growl {
         js = (JavascriptExecutor) driver;
     }
 
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+
     @Test
     public void growlTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/");
+
         // Check for jQuery on the page, add it if need be
         js.executeScript("if (!window.jQuery) {" +
                 "var jquery = document.createElement('script'); jquery.type = 'text/javascript';" +
@@ -41,8 +47,4 @@ public class Growl {
         Thread.sleep(5000);
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-    }
 }

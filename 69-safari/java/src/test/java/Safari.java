@@ -14,6 +14,11 @@ public class Safari {
         driver = new SafariDriver();
     }
 
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+
     @Test
     public void dropdownTest() {
         driver.get("http://the-internet.herokuapp.com/");
@@ -21,8 +26,4 @@ public class Safari {
         assertThat(title, is(equalTo("The Internet")));
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-    }
 }

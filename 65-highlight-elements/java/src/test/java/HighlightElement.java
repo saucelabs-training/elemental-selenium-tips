@@ -1,9 +1,9 @@
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -17,12 +17,9 @@ public class HighlightElement {
         js = (JavascriptExecutor) driver;
     }
 
-    @Test
-    public void highlightElementTest() throws InterruptedException {
-        driver.get("http://the-internet.herokuapp.com/large");
-        WebElement element = driver.findElement(By.id("sibling-2.3"));
-        System.out.println(element);
-        highlightElement(element, 3);
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
     }
 
     /**
@@ -52,8 +49,11 @@ public class HighlightElement {
         }
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
+    @Test
+    public void highlightElementTest() throws InterruptedException {
+        driver.get("http://the-internet.herokuapp.com/large");
+        WebElement element = driver.findElement(By.id("sibling-2.3"));
+        highlightElement(element, 3);
     }
+
 }
