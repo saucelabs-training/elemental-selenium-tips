@@ -15,6 +15,11 @@ public class RightClick {
         driver = new FirefoxDriver();
     }
 
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+
     @Test
     public void rightClickTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/context_menu");
@@ -30,8 +35,4 @@ public class RightClick {
         assertThat(alert.getText(), is(equalTo("You selected a context menu")));
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-    }
 }
