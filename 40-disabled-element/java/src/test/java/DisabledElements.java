@@ -1,18 +1,14 @@
-package num40;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-/**
- * Created by andrew on 8/22/15.
- */
-public class example {
+public class DisabledElements {
     WebDriver driver;
 
     @Before
@@ -29,8 +25,8 @@ public class example {
     @Test
     public void test() {
         driver.get("http://the-internet.herokuapp.com/dropdown");
-        Select dropdown = new Select(driver.findElement(By.tagName("option")));
-        WebElement itemsOfInterest = dropdown.getOptions().get(1);
-        assert (itemsOfInterest.isEnabled());
+        Select dropdown = new Select(driver.findElement(By.id("dropdown")));
+        assertThat(dropdown.getOptions().get(0).isEnabled(), is(false));
     }
+
 }
