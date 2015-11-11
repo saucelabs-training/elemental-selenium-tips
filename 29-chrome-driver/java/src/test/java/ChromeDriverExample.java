@@ -21,14 +21,15 @@ public class ChromeDriverExample {
 //        driver = new RemoteWebDriver(new URL("http://localhost:9515"), DesiredCapabilities.chrome());
     }
 
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+
     @Test
     public void chromeDriverTest() {
         driver.get("http://the-internet.herokuapp.com/");
         assertThat(driver.getTitle(), is(equalTo("The Internet")));
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-    }
 }
