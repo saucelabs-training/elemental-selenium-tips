@@ -23,6 +23,11 @@ public class Grid {
         driver = new RemoteWebDriver(new URL(url), capabilities);
     }
 
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
+
     @Test
     public void gridTest() {
         // Before running make sure Selenium Grid is running and it has at least one node with desired browser
@@ -33,8 +38,4 @@ public class Grid {
         assertThat(driver.getTitle(), is(equalTo("The Internet")));
     }
 
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
-    }
 }
