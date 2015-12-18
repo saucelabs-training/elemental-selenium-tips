@@ -8,7 +8,7 @@ def setup
   caps.platform   = 'Windows XP'
   @driver         = Selenium::WebDriver.for(
                     :remote,
-                    url: "http://sauce-username:sauce-access-key@ondemand.saucelabs.com:80/wd/hub",
+                    url: "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:80/wd/hub",
                     desired_capabilities: caps)
 
 end
