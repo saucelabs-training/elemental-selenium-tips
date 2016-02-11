@@ -1,4 +1,8 @@
-# http://elementalselenium.com/tips/5-select-from-a-dropdown
+# -*- coding: utf-8 -*-
+"""
+Implementation of http://elementalselenium.com/tips/5-select-from-a-dropdown
+"""
+
 import unittest
 from selenium import webdriver
 # for test_example_2
@@ -21,10 +25,12 @@ class ES5_DropDown(unittest.TestCase):
         for opt in options:
             if opt.text == 'Option 1':
                 opt.click()
+                break
         for opt in options:
             if opt.is_selected():
                 selected_option = opt.text
-        assert selected_option == 'Option 1'
+                break
+        assert selected_option == 'Option 1', "Selected option should be Option 1"
 
     def test_example_2(self):
         driver = self.driver
@@ -33,7 +39,7 @@ class ES5_DropDown(unittest.TestCase):
         select_list = WebDriverSelect(dropdown)
         select_list.select_by_visible_text('Option 1')
         selected_option = select_list.first_selected_option.text
-        assert selected_option == 'Option 1'
+        assert selected_option == 'Option 1', "Selected option should be Option 1"
 
 if __name__ == "__main__":
     unittest.main()
