@@ -1,8 +1,12 @@
-# http://elementalselenium.com/tips/2-download-a-file
+# -*- coding: utf-8 -*-
+"""
+Implementation of http://elementalselenium.com/tips/2-download-a-file
+"""
+
 import os
-import uuid
 import time
 import shutil
+import tempfile
 import unittest
 from selenium import webdriver
 
@@ -10,10 +14,7 @@ from selenium import webdriver
 class ES2_Download(unittest.TestCase):
 
     def setUp(self):
-        uid = str(uuid.uuid4())
-        self.download_dir = os.path.join(os.getcwd(), uid)
-        if not os.path.exists(self.download_dir):
-            os.makedirs(self.download_dir)
+        self.download_dir = tempfile.mkdtemp()
 
         profile = webdriver.FirefoxProfile()
         profile.set_preference("browser.download.dir", self.download_dir)
@@ -39,8 +40,8 @@ class ES2_Download(unittest.TestCase):
         files = os.listdir(self.download_dir)
         files = [os.path.join(self.download_dir, f)
                  for f in files]  # add directory to each filename
-        assert len(files) > 0  # files should not be an empty list
-        assert os.path.getsize(files[0]) > 0  # first file should not be empty
+        assert len(files) > 0, "no files where downloaded"
+        assert os.path.getsize(files[0]) < 1, "downloaded file was empty"
 
 if __name__ == "__main__":
     unittest.main()
