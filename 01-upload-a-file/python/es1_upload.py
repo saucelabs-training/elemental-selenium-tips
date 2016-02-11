@@ -1,4 +1,8 @@
-# http://elementalselenium.com/tips/1-upload-a-file
+# -*- coding: utf-8 -*-
+"""
+Implementation of http://elementalselenium.com/tips/1-upload-a-file
+"""
+
 import os
 import unittest
 from selenium import webdriver
@@ -21,7 +25,7 @@ class ES1_Upload(unittest.TestCase):
         driver.find_element_by_id('file-submit').click()
 
         uploaded_file = driver.find_element_by_id('uploaded-files').text
-        assert uploaded_file == filename
+        assert uploaded_file == filename, "uploaded file should be %s" % filename
 
 if __name__ == "__main__":
     unittest.main()
