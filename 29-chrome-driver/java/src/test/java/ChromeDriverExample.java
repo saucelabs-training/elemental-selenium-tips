@@ -12,7 +12,7 @@ public class ChromeDriverExample {
     @Before
     public void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver",
-                System.getProperty("user.dir") + "/../../vendor/chrome-driver-2.15/chromedriver_mac32");
+                System.getProperty("user.dir") + "/../../vendor/chrome-driver-2.21/chromedriver_mac32");
         driver = new ChromeDriver();
 
 //    Option 2
