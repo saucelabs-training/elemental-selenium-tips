@@ -2,7 +2,7 @@
 .DS_Store
 
 # IntelliJ
-.idea/*
+.idea/
 *.iml
 *.iws
 .*.java.swp
