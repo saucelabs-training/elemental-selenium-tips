@@ -12,12 +12,14 @@ RSpec.configure do |c|
   end
 
   c.after(:each) do
-    unless example.exception.nil?
-      attach_file("screenshot",
-        @driver.save_screenshot(File.join(Dir.pwd, "results/#{UUID.new.generate}.png")))
+    begin
+      unless example.exception.nil?
+        attach_file("screenshot",
+          @driver.save_screenshot(File.join(Dir.pwd, "results/#{UUID.new.generate}.png")))
+      end
+    ensure
+      @driver.quit
     end
-
-    @driver.quit
   end
 
 end
