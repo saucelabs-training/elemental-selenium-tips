@@ -19,13 +19,13 @@ def run
 end
 
 run do
-  @driver.get 'http://localhost:4567/broken_images'
+  @driver.get 'http://the-internet.herokuapp.com/broken_images'
 
-  # get all images on the page
+  # Get all images on the page.
   all_images = @driver.find_elements tag_name: 'img'
 
-  # iterate through each, reject the ones that are valid
-  # return a collection of broken images
+  # Iterate through each, rejecting the ones that are valid.
+  # Return a collection of found broken images.
   broken_images = all_images.reject do |image|
     @driver.execute_script(
       "return arguments[0].complete && \
@@ -34,6 +34,6 @@ run do
       image)
   end
 
-  # if there are no broken images, then the collection should be empty
+  # Assert there are no broken images by checking if the collection is empty.
   expect(broken_images).to be_empty
 end

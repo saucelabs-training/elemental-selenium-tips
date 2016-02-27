@@ -1,24 +1,42 @@
 {
   "defectsList" : [ {
-    "title" : "Product defects",
-    "status" : "FAILED",
+    "title" : "Test defects",
+    "status" : "BROKEN",
     "defects" : [ {
-      "uid" : "9389b9d482e2e8b2",
+      "uid" : "4c80b6b7c78e0b85",
       "failure" : {
-        "message" : "\nexpected: false\n got: true\n(compared using eql?)\n",
+        "message" : "`example` is not available from within an example (e.g. an `it` block) or from constructs that run in the scope of an example (e.g. `before`, `let`, etc). It is only available on an example group (e.g. a `describe` or `context` block).",
         "stackTrace" : null
       },
       "testCases" : [ {
-        "uid" : "e62cf6fa5d5be5fd",
-        "name" : "fails",
-        "title" : "Fails",
+        "uid" : "78416e283d974e1a",
+        "name" : "Reporting passes",
+        "title" : "Reporting passes",
         "time" : {
-          "start" : 1405458122150,
-          "stop" : 1405458115134,
-          "duration" : -7016
+          "start" : 1455832474063,
+          "stop" : 1455832476822,
+          "duration" : 2759
         },
         "severity" : "NORMAL",
-        "status" : "FAILED"
+        "status" : "BROKEN"
+      } ]
+    }, {
+      "uid" : "c45f8f6100fd355c",
+      "failure" : {
+        "message" : "RSpec::Core::MultipleExceptionError",
+        "stackTrace" : null
+      },
+      "testCases" : [ {
+        "uid" : "1846b4cb6aa4fa84",
+        "name" : "Reporting fails",
+        "title" : "Reporting fails",
+        "time" : {
+          "start" : 1455832476823,
+          "stop" : 1455832479234,
+          "duration" : 2411
+        },
+        "severity" : "NORMAL",
+        "status" : "BROKEN"
       } ]
     } ]
   } ]

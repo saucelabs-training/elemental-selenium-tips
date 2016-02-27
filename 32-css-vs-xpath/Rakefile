@@ -1,0 +1,8 @@
+desc 'run tests against all browsers'
+task :run_all do
+  `browser='internet_explorer' parallel_rspec --test-options '-r ./config.rb' spec`
+  `browser='chrome' parallel_rspec --test-options '-r ./config.rb' spec`
+  `browser='firefox' parallel_rspec --test-options '-r ./config.rb' spec`
+  `browser='opera' parallel_rspec --test-options '-r ./config.rb' spec`
+  `browser='safari' parallel_rspec --test-options '-r ./config.rb' spec`
+end

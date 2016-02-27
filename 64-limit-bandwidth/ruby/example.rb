@@ -6,18 +6,17 @@ require 'rspec/expectations'
 include RSpec::Matchers
 
 def configure_proxy
-  server = BrowserMob::Proxy::Server.new('./browsermob-proxy-2.0-beta-9/bin/browsermob-proxy')
+  server = BrowserMob::Proxy::Server.new('../../vendor/browsermob-proxy/bin/browsermob-proxy')
   server.start
   @proxy = server.create_proxy
   profile = Selenium::WebDriver::Firefox::Profile.new
   profile.proxy = @proxy.selenium_proxy
-  return Selenium::WebDriver::Remote::Capabilities.firefox(firefox_profile: profile)
+  profile
 end
 
 def setup
-  client = Selenium::WebDriver::Remote::Http::Default.new
-  client.timeout = 300 # seconds
-  @driver = Selenium::WebDriver.for :remote, desired_capabilities: configure_proxy, http_client: client
+  @driver = Selenium::WebDriver.for :firefox, profile: configure_proxy
+  @driver.manage.timeouts.page_load = 300 # seconds
   @proxy.limit(upstream_kbps: 20, downstream_kbps: 30)
 end
 

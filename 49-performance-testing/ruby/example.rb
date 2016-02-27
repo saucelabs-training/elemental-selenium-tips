@@ -7,7 +7,7 @@ include RSpec::Matchers
 require 'json'
 
 def configure_proxy
-  proxy_binary = BrowserMob::Proxy::Server.new('../48-load-testing/browsermob-proxy/bin/browsermob-proxy')
+  proxy_binary = BrowserMob::Proxy::Server.new('../../vendor/browsermob-proxy/bin/browsermob-proxy')
   proxy_binary.start
   proxy_binary.create_proxy
 end

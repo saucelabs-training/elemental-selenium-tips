@@ -1,7 +1,5 @@
-# Encoding: utf-8
-
 require 'selenium-webdriver'
-require 'rspec-expectations'
+require 'rspec/expectations'
 include RSpec::Matchers
 
 def setup
@@ -20,5 +18,5 @@ end
 
 run do
   @driver.get 'http://the-internet.herokuapp.com'
-  @driver.title.include?('The Internet').should be_true
+  expect(@driver.title).to eql 'The Internet'
 end

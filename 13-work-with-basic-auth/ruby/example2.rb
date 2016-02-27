@@ -1,5 +1,6 @@
 require 'selenium-webdriver'
-require 'rspec-expectations'
+require 'rspec/expectations'
+include RSpec::Matchers
 
 def setup
   @driver = Selenium::WebDriver.for :firefox
@@ -18,6 +19,6 @@ end
 
 run do
   @driver.get 'http://the-internet.herokuapp.com/basic_auth'
-  page_message = @driver.find_element(css: 'p').text
-  page_message.should =~ /Congratulations!/
+  page_message = @driver.find_element(css: '.example p').text
+  expect(page_message).to eql 'Congratulations! You must have the proper credentials.'
 end

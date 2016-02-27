@@ -6,7 +6,7 @@ require 'rspec/expectations'
 include RSpec::Matchers
 
 def configure_proxy
-  server = BrowserMob::Proxy::Server.new('./browsermob-proxy-2.0-beta-9/bin/browsermob-proxy')
+  server = BrowserMob::Proxy::Server.new('../../vendor/browsermob-proxy/bin/browsermob-proxy')
   server.start
   @proxy = server.create_proxy
   profile = Selenium::WebDriver::Firefox::Profile.new

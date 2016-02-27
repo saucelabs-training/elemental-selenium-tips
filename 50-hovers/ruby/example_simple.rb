@@ -1,7 +1,7 @@
 # Encoding: utf-8
 
 require 'selenium-webdriver'
-require 'rspec-expectations'
+require 'rspec/expectations'
 include RSpec::Matchers
 
 def setup
@@ -18,14 +18,9 @@ def run
   teardown
 end
 
-
 run do
   @driver.get 'http://the-internet.herokuapp.com/hovers'
-  avatar = @driver.find_element(class: 'figure')
-  @driver.action.move_to(avatar).perform
-  Selenium::WebDriver::Wait.new(timeout: 2).until do
-    @driver.find_element(class: 'figcaption').displayed?
-  end
-  user_url = @driver.find_element(css: '.figcaption > a').attribute('href')
-  expect(user_url).to eq('http://the-internet.herokuapp.com/users/1')
+  an_avatar = @driver.find_element(class: 'figure')
+  @driver.action.move_to(an_avatar).perform
+  expect(@driver.find_element(class: 'figcaption').displayed?).to eql true
 end

@@ -6,7 +6,7 @@ require 'rspec/expectations'
 include RSpec::Matchers
 
 def configure_proxy
-  server = BrowserMob::Proxy::Server.new('../66-blacklist/browsermob-proxy-2.0-beta-9/bin/browsermob-proxy')
+  server = BrowserMob::Proxy::Server.new('../../vendor/browsermob-proxy/bin/browsermob-proxy')
   server.start
   @proxy = server.create_proxy
   profile = Selenium::WebDriver::Firefox::Profile.new
@@ -29,16 +29,18 @@ def run
   teardown
 end
 
+# ...
+
 run do
   @proxy.new_har
 
-  @driver.get 'http://localhost:4567/broken_images'
+  @driver.get 'http://the-internet.herokuapp.com/broken_images'
 
-  # get the src of all images on the page
+  # Get all of images on the page
   all_images = @driver.find_elements(tag_name: 'img')
 
-  # iterate through each, match by the src and check the HAR for bad response codes
-  # store the broken images found in a collection
+  # Iterate through each and check the HAR for bad response codes.
+  # Store the broken images found in a collection.
   broken_images = []
   all_images.each do |img|
     broken_images << @proxy.har.entries.find do |entry|
@@ -46,6 +48,6 @@ run do
     end
   end
 
-  # assert that the broken images collection is empty
+  # Assert that there are no broken images by checking if collection is empty.
   expect(broken_images).to be_empty
 end

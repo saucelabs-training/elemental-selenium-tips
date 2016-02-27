@@ -1,7 +1,7 @@
 # Encoding: utf-8
 
 require 'selenium-webdriver'
-require 'rspec-expectations'
+require 'rspec/expectations'
 include RSpec::Matchers
 
 def setup
@@ -18,20 +18,18 @@ def run
   teardown
 end
 
-
 ### Part 1 ###
 run do
   @driver.get 'http://the-internet.herokuapp.com/login'
   @driver.find_element(id: 'username').send_keys('tomsmith')
   @driver.find_element(id: 'password').send_keys('SuperSecretPassword!')
   @driver.find_element(id: 'login').submit
-  @driver.find_element(id: 'login').displayed?.should be_false
+  expect(@driver.find_element(id: 'login').displayed?).to eql false
 end
-# throws
+# RETURNS:
 # Unable to locate element: \
 #{"method":"id","selector":"login"} (Selenium::WebDriver::Error::NoSuchElementError)
-# See https://selenium.googlecode.com/git/docs/api/rb/Selenium/WebDriver/Error.html
-
+# See https://seleniumhq.github.io/selenium/docs/api/rb/Selenium/WebDriver.html for details
 
 ### Part 2 ###
 run do
@@ -40,7 +38,7 @@ run do
   @driver.find_element(id: 'password').send_keys('SuperSecretPassword!')
   @driver.find_element(id: 'login').submit
   begin
-    @driver.find_element(id: 'login').displayed?.should be_false
+    expect(@driver.find_element(id: 'login').displayed?).to eql false
   rescue Selenium::WebDriver::Error::NoSuchElementError
     false
   rescue Selenium::WebDriver::Error::StaleElementReferenceError
@@ -69,5 +67,5 @@ run do
   @driver.find_element(id: 'username').send_keys('tomsmith')
   @driver.find_element(id: 'password').send_keys('SuperSecretPassword!')
   @driver.find_element(id: 'login').submit
-  is_displayed?(id: 'login').should be_false
+  expect(is_displayed?(id: 'login')).to eql false
 end

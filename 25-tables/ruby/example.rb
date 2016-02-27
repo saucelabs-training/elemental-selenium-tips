@@ -1,29 +1,14 @@
 # Encoding: utf-8
 
 require 'selenium-webdriver'
-require 'rspec-expectations'
-#require 'selenium-connect'
+require 'rspec/expectations'
+include RSpec::Matchers
 
 def setup
   @driver = Selenium::WebDriver.for :firefox
-  #opts = {
-  #  host: 'saucelabs',
-  #  sauce_username: 'the-internet',
-  #  sauce_api_key: '26bd4eac-9ef2-4cf0-a6e0-3b7736bd5359',
-  #  os: 'windows',
-  #  browser: 'iexplore',
-  #  browser_version: '8',
-  #  sauce_opts: { selenium_version: '2.32.0' },
-  #}
-  #config = SeleniumConnect::Configuration.new opts
-  #@selenium_connect = SeleniumConnect.start config
-  #@job = @selenium_connect.create_job
-  #@driver = @job.start name: 'table sorting'
 end
 
 def teardown
-  #@job.finish
-  #@selenium_connect.finish
   @driver.quit
 end
 
@@ -36,46 +21,56 @@ end
 run do
   @driver.get 'http://the-internet.herokuapp.com/tables'
 
-  # sort DUES ascending
+  # sort DUE ascending
   @driver.find_element(css: '#table1 thead tr th:nth-of-type(4)').click
 
-  # get DUES
+  # get DUE values
   dues = @driver.find_elements(css: '#table1 tbody tr td:nth-of-type(4)')
-  due_values = []
-  dues.each { |due| due_values << due.text.gsub(/\$/,'').to_f }
+  due_values = dues.map { |due| due.text.delete('$').to_f }
 
-  # assert DUES are ascending
-  (due_values == due_values.sort).should == true
+  # assert DUE values are ascending
+  expect(due_values).to eql due_values.sort
+end
 
-  # sort DUES descending
+run do
+  @driver.get 'http://the-internet.herokuapp.com/tables'
+
+  # sort DUE descending
+  @driver.find_element(css: '#table1 thead tr th:nth-of-type(4)').click
   @driver.find_element(css: '#table1 thead tr th:nth-of-type(4)').click
 
-  # get DUES
+  # get DUE values
   dues = @driver.find_elements(css: '#table1 tbody tr td:nth-of-type(4)')
-  due_values = []
-  dues.each { |due| due_values << due.text.gsub(/\$/,'').to_i }
+  due_values = dues.map { |due| due.text.delete('$').to_f }
 
-  # assert DUES are desending
-  (due_values == due_values.sort).should == false
+  # assert DUE values are descending
+  expect(due_values).to eql due_values.sort.reverse
+end
+
+run do
+  @driver.get 'http://the-internet.herokuapp.com/tables'
 
   # sort EMAIL ascending
   @driver.find_element(css: '#table1 thead tr th:nth-of-type(3)').click
 
   # get EMAIL values
   emails = @driver.find_elements(css: '#table1 tbody tr td:nth-of-type(3)')
-  email_values = []
-  emails.each { |email| email_values << email.text }
+  email_values = emails.map { |email| email.text }
 
   # assert EMAIL is ascending
-  (email_values == email_values.sort).should == true
+  expect(email_values).to eql email_values.sort
 end
 
 run do
-  #@driver.get 'http://the-internet:4567/tables'
   @driver.get 'http://the-internet.herokuapp.com/tables'
+
+  # sort DUE ascending
   @driver.find_element(css: '#table2 thead .dues').click
+
+  # get DUE values
   dues = @driver.find_elements(css: '#table2 tbody .dues')
-  due_values = []
-  dues.each { |due| due_values << due.text.gsub(/\$/,'').to_f }
-  (due_values == due_values.sort).should == true
+  due_values = dues.map { |due| due.text.delete('$').to_f }
+
+  # assert DUE values are ascending
+  expect(due_values).to eql due_values.sort
 end

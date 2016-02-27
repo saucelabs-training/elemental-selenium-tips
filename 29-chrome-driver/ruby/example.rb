@@ -1,17 +1,12 @@
-# Encoding: utf-8
-
 require 'selenium-webdriver'
-require 'rspec-expectations'
+require 'rspec/expectations'
+include RSpec::Matchers
 
 def setup
-  # Option 1
-  Selenium::WebDriver::Chrome::Service.executable_path = File.join(Dir.pwd, './chromedriver')
-  @driver = Selenium::WebDriver.for :chrome
+  #Selenium::WebDriver::Chrome::Service.executable_path = File.join(Dir.pwd, '..', '..', 'vendor', 'chromedriver')
+  #@driver = Selenium::WebDriver.for :chrome
 
-  # Option 2
-  # Start the chromedriver in your terminal
-  # Connect to it via Selenium Remote, like so:
-  # @driver = Selenium::WebDriver.for :remote, url: 'http://localhost:9515', desired_capabilities: :chrome
+  @driver = Selenium::WebDriver.for :remote, url: 'http://localhost:9515', desired_capabilities: :chrome
 end
 
 def teardown
@@ -26,5 +21,5 @@ end
 
 run do
   @driver.get 'http://the-internet.herokuapp.com/'
-  @driver.title.should == 'The Internet'
+  expect(@driver.title).to eql 'The Internet'
 end

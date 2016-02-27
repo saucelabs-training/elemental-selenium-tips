@@ -1,5 +1,3 @@
-# Encoding: utf-8
-
 require 'selenium-webdriver'
 require 'rspec-expectations'
 
@@ -24,5 +22,5 @@ run do
   dropdowns = @driver.find_elements(tag_name: 'option')
   item_of_interest = dropdowns.find { |dropdown| dropdown.text == 'Please select an option' }
   #item_of_interest = dropdowns.find { |dropdown| dropdown.text == 'Option 1' }
-  item_of_interest.enabled?.should be_false
+  expect(item_of_interest.enabled?).to eql false
 end

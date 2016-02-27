@@ -19,8 +19,7 @@ end
 run do
   @driver.get 'http://the-internet.herokuapp.com/abtest'
   heading_text = @driver.find_element(css: 'h3').text
-  puts heading_text.class
-  expect(['A/B Test Variation 1', 'A/B Test Control'].include? heading_text).to be_truthy
+  expect(['A/B Test Variation 1', 'A/B Test Control'].include? heading_text).to eql true
   @driver.manage.add_cookie(name: 'optimizelyOptOut', value: 'true')
   @driver.navigate.refresh
   heading_text = @driver.find_element(css: 'h3').text

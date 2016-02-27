@@ -21,7 +21,7 @@ def highlight(element, duration = 3)
   # store original style so it can be reset later
   original_style = element.attribute("style")
 
-  # style element with yellow border
+  # style element with dashed red border
   @driver.execute_script(
     "arguments[0].setAttribute(arguments[1], arguments[2])",
     element,

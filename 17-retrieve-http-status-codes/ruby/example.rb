@@ -1,20 +1,19 @@
-# Encoding: utf-8
-
 require 'selenium-webdriver'
-require 'rspec-expectations'
+require 'rspec/expectations'
+include RSpec::Matchers
 require 'browsermob/proxy'
 
 def configure_proxy
-  server = BrowserMob::Proxy::Server.new('./browsermob-proxy/bin/browsermob-proxy')
-  server.start
-  @proxy = server.create_proxy
-  @profile = Selenium::WebDriver::Firefox::Profile.new
-  @profile.proxy = @proxy.selenium_proxy
+  server = BrowserMob::Proxy::Server.new(
+    File.join(Dir.pwd, '..', '..', 'vendor', 'browsermob-proxy/bin/browsermob-proxy'), log: true)
+  @proxy = server.start.create_proxy
+  profile = Selenium::WebDriver::Firefox::Profile.new
+  profile.proxy = @proxy.selenium_proxy
+  profile
 end
 
 def setup
-  configure_proxy
-  @driver = Selenium::WebDriver.for :firefox, :profile => @profile
+  @driver = Selenium::WebDriver.for :firefox, profile: configure_proxy
 end
 
 def teardown
@@ -29,16 +28,15 @@ def run
 end
 
 def retrieve_status_code
-  yield
-end
-
-def visit(url)
   @proxy.new_har
-  @driver.get url
+  yield
   @proxy.har.entries.first.response.status
 end
 
 run do
-  status_code = visit 'http://the-internet.herokuapp.com/status_codes/404'
-  status_code.should == 404
+  status_code = retrieve_status_code do
+    @driver.get 'http://the-internet.herokuapp.com/status_codes/404'
+  end
+
+  expect(status_code).to eql 404
 end

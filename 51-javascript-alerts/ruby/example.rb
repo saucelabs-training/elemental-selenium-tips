@@ -1,7 +1,7 @@
 # Encoding: utf-8
 
 require 'selenium-webdriver'
-require 'rspec-expectations'
+require 'rspec/expectations'
 include RSpec::Matchers
 
 def setup
@@ -26,5 +26,5 @@ run do
   popup.accept
 
   result = @driver.find_element(id: 'result').text
-  expect(result).to eq('You clicked: Ok')
+  expect(result).to eql('You clicked: Ok')
 end

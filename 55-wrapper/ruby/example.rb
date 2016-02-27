@@ -1,12 +1,10 @@
-# Encoding: utf-8
+# filename: growl.rb
 
 require 'selenium-webdriver'
-require_relative 'wrapper'
-require 'rspec-expectations'
-include RSpec::Matchers
+require_relative 'growl_wrapper'
 
 def setup
-  @driver = Selenium::WebDriver.for :firefox, listener: Wrapper.new
+  @driver = Selenium::WebDriver.for :remote, listener: GrowlWrapper.new
 end
 
 def teardown

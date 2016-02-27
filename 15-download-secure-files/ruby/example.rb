@@ -1,7 +1,6 @@
 require 'selenium-webdriver'
 require 'rspec/expectations'
 require 'rest-client'
-
 include RSpec::Matchers
 
 def setup
@@ -23,7 +22,6 @@ run do
   cookie = @driver.manage.cookie_named 'rack.session'
   link = @driver.find_element(css: '.example a').attribute('href')
   response = RestClient.head link, cookie: { cookie[:name] => cookie[:value] }
-  #expect(response.headers[:content_type]).to eql('image/jpeg')
   expect(response.headers[:content_type]).to eql('application/pdf')
   expect(response.headers[:content_length].to_i).to be > 0
 end

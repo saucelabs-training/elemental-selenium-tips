@@ -4,7 +4,6 @@
 require 'ruby-jmeter'
 require 'recursive-open-struct'
 require 'json'
-require 'pry-debugger'
 
 module HARtoJMX
   def self.convert(file)

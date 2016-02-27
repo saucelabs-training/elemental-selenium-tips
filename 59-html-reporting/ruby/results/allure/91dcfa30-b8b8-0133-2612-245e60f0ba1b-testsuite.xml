@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<ns2:test-suite xmlns="" xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1455832659927" stop="1455832667289">
+  <name>Reporting</name>
+  <title>Reporting</title>
+  <test-cases>
+    <test-case start="1455832659927" stop="1455832663644" status="broken">
+      <name>Reporting passes</name>
+      <title>Reporting passes</title>
+      <failure>
+        <message>`example` is not available from within an example (e.g. an `it` block) or from constructs that run in the scope of an example (e.g. `before`, `let`, etc). It is only available on an example group (e.g. a `describe` or `context` block).</message>
+        <stack-trace>/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example_group.rb:683:in `method_missing'&#xD;
+/Users/tourdedave/Dropbox/_dev/elemental-selenium-tips/59-html-reporting/ruby/reporting_spec.rb:16:in `block (2 levels) in &lt;top (required)&gt;'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example.rb:425:in `instance_exec'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example.rb:425:in `instance_exec'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/hooks.rb:364:in `run'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/hooks.rb:521:in `block in run_owned_hooks_for'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/hooks.rb:520:in `each'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/hooks.rb:520:in `run_owned_hooks_for'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/hooks.rb:607:in `block in run_example_hooks_for'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/hooks.rb:606:in `each'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/hooks.rb:606:in `run_example_hooks_for'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/hooks.rb:477:in `run'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/allure-rspec-0.7.7/lib/allure-rspec/hooks.rb:33:in `run'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example.rb:485:in `run_after_example'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example.rb:251:in `block in run'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example.rb:478:in `block in with_around_and_singleton_context_hooks'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example.rb:435:in `block in with_around_example_hooks'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/hooks.rb:478:in `block in run'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/hooks.rb:616:in `run_around_example_hooks_for'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/hooks.rb:478:in `run'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/allure-rspec-0.7.7/lib/allure-rspec/hooks.rb:33:in `run'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example.rb:435:in `with_around_example_hooks'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example.rb:478:in `with_around_and_singleton_context_hooks'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example.rb:233:in `run'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example_group.rb:581:in `block in run_examples'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example_group.rb:577:in `map'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example_group.rb:577:in `run_examples'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/example_group.rb:543:in `run'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/runner.rb:119:in `block (3 levels) in run_specs'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/runner.rb:119:in `map'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/runner.rb:119:in `block (2 levels) in run_specs'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/configuration.rb:1680:in `with_suite_hooks'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/runner.rb:118:in `block in run_specs'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/reporter.rb:77:in `report'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/runner.rb:117:in `run_specs'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/runner.rb:93:in `run'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/runner.rb:78:in `run'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/lib/rspec/core/runner.rb:45:in `invoke'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/rspec-core-3.4.2/exe/rspec:4:in `&lt;top (required)&gt;'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/bin/rspec:23:in `load'&#xD;
+/Users/tourdedave/.rbenv/versions/2.2.2/bin/rspec:23:in `&lt;main&gt;'</stack-trace>
+      </failure>
+      <steps/>
+      <attachments/>
+      <labels>
+        <label name="thread" value="70269566059000"/>
+        <label name="host" value="Daves-MacBook-Pro-2.local"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1455832663644" stop="1455832667288" status="broken">
+      <name>Reporting fails</name>
+      <title>Reporting fails</title>
+      <failure>
+        <message>RSpec::Core::MultipleExceptionError</message>
+        <stack-trace/>
+      </failure>
+      <steps/>
+      <attachments/>
+      <labels>
+        <label name="thread" value="70269566059000"/>
+        <label name="host" value="Daves-MacBook-Pro-2.local"/>
+      </labels>
+      <parameters/>
+    </test-case>
+  </test-cases>
+  <labels>
+    <label name="thread" value="70269566059000"/>
+    <label name="host" value="Daves-MacBook-Pro-2.local"/>
+  </labels>
+</ns2:test-suite>

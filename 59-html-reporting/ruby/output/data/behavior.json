@@ -3,45 +3,45 @@
     "title" : "Without feature",
     "statistic" : {
       "total" : 2,
-      "passed" : 1,
+      "passed" : 0,
       "pending" : 0,
       "canceled" : 0,
-      "failed" : 1,
-      "broken" : 0
+      "failed" : 0,
+      "broken" : 2
     },
     "stories" : [ {
       "uid" : "5f3b024b0da60efe9ecb322fd34a2604",
       "title" : "Without story",
       "statistic" : {
         "total" : 2,
-        "passed" : 1,
+        "passed" : 0,
         "pending" : 0,
         "canceled" : 0,
-        "failed" : 1,
-        "broken" : 0
+        "failed" : 0,
+        "broken" : 2
       },
       "testCases" : [ {
-        "uid" : "bd96772cb319c22e",
-        "name" : "passes",
-        "title" : "Passes",
+        "uid" : "78416e283d974e1a",
+        "name" : "Reporting passes",
+        "title" : "Reporting passes",
         "time" : {
-          "start" : 1405458115134,
-          "stop" : 1405458108466,
-          "duration" : -6668
+          "start" : 1455832474063,
+          "stop" : 1455832476822,
+          "duration" : 2759
         },
         "severity" : "NORMAL",
-        "status" : "PASSED"
+        "status" : "BROKEN"
       }, {
-        "uid" : "e62cf6fa5d5be5fd",
-        "name" : "fails",
-        "title" : "Fails",
+        "uid" : "1846b4cb6aa4fa84",
+        "name" : "Reporting fails",
+        "title" : "Reporting fails",
         "time" : {
-          "start" : 1405458122150,
-          "stop" : 1405458115134,
-          "duration" : -7016
+          "start" : 1455832476823,
+          "stop" : 1455832479234,
+          "duration" : 2411
         },
         "severity" : "NORMAL",
-        "status" : "FAILED"
+        "status" : "BROKEN"
       } ]
     } ]
   } ]

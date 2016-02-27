@@ -1,10 +1,7 @@
 # Encoding: utf-8
 
-ENV['EMAIL_USERNAME'] = 'dhaeffner@gmail.com'
-ENV['EMAIL_PASSWORD'] = 'stsxiaayuexxuzbk'
-
 require 'selenium-webdriver'
-require 'rspec-expectations'
+require 'rspec/expectations'
 include RSpec::Matchers
 require 'gmail'
 
@@ -23,13 +20,15 @@ def run
 end
 
 def try(number_of_times)
-  count = 0 ; item_of_interest = false
-  until item_of_interest == true || count == number_of_times
+  count = 0 ; item_of_interest = nil
+  until item_of_interest != nil || count == number_of_times
     item_of_interest = yield
     sleep 10
     count += 1
   end
 end
+
+# ...
 
 run do
   # Part 1: Initiate forgot password email
@@ -42,15 +41,15 @@ run do
   try(6) { @email = gmail.inbox.emails(:unread, from: 'no-reply@the-internet.herokuapp.com').last }
   message_body = @email.message.body.raw_source
 
-  # Part 3: Pull the URL, username, and password values from the e-mail's message body
+  # Part 3: Grab the URL, username, and password values from the e-mail's message body
   url =  message_body.scan(/https?:\/\/[\S]+/).last
   username = message_body.scan(/username: (.*)$/)[0][0].strip
   password = message_body.scan(/password: (.*)$/)[0][0].strip
 
-  # Part 4: Visit the login page in the browser, log in, and assert that it worked
+  # Part 4: Visit the URL from the email the browser, log in, and assert that it worked
   @driver.get url
   @driver.find_element(id: 'username').send_keys username
   @driver.find_element(id: 'password').send_keys password
   @driver.find_element(id: 'login').submit
-  @driver.current_url.include?('/secure').should be_true
+  expect(@driver.current_url.include?('/secure')).to eql true
 end

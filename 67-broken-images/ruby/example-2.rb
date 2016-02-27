@@ -21,13 +21,13 @@ end
 run do
   require 'rest-client'
 
-  @driver.get 'http://localhost:4567/broken_images'
+  @driver.get 'http://the-internet.herokuapp.com/broken_images'
 
-  # get the src of all images on the page
+  # Get all images on the page
   all_images = @driver.find_elements(tag_name: 'img')
 
-  # iterate through each, grab the src, and perform an HTTP GET
-  # check the status code to make sure it's correct
+  # Iterate through each, grab the src, and perform an HTTP GET
+  # with an HTTP library, checking the status code to make sure it's correct
   all_images.each do |img|
     RestClient.get img.attribute('src') do |response, request, result|
       expect(response.code).to eq 200

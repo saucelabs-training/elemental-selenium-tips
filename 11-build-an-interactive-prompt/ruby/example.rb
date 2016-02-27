@@ -1,5 +1,4 @@
 require 'selenium-webdriver'
-require 'rspec-expectations'
 
 def setup
   @driver = Selenium::WebDriver.for :firefox

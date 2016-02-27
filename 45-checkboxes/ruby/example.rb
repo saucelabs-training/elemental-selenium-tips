@@ -1,7 +1,7 @@
 # Encoding: utf-8
 
 require 'selenium-webdriver'
-require 'rspec-expectations'
+require 'rspec/expectations'
 include RSpec::Matchers
 
 def setup
@@ -18,7 +18,6 @@ def run
   teardown
 end
 
-# Part 1: Discovery
 run do
   @driver.get 'http://the-internet.herokuapp.com/checkboxes'
   checkboxes = @driver.find_elements(css: 'input[type="checkbox"]')
@@ -30,16 +29,16 @@ run do
   checkboxes.each { |checkbox| puts checkbox.selected?.inspect }
 end
 
-# Part 2: Option 1
 run do
   @driver.get 'http://the-internet.herokuapp.com/checkboxes'
   checkboxes = @driver.find_elements(css: 'input[type="checkbox"]')
-  checkboxes.last.attribute('checked').should_not be_nil
+  expect(checkboxes.last.attribute('checked')).not_to be_nil
+  # alternatively
+  expect(checkboxes.last.attribute('checked')).to eql("true")
 end
 
-# Part 3: Option 2
 run do
   @driver.get 'http://the-internet.herokuapp.com/checkboxes'
   checkboxes = @driver.find_elements(css: 'input[type="checkbox"]')
-  checkboxes.last.selected?.should be_true
+  expect(checkboxes.last.selected?).to eql true
 end

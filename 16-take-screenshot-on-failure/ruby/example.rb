@@ -23,5 +23,5 @@ end
 
 run do
   @driver.get 'http://the-internet.herokuapp.com'
-  expect(@driver.find_element(css: 'h1').text).to eql 'Welcome to the Internet!'
+  expect(@driver.find_element(css: 'h1').text).to eql 'blah blah blah'
 end

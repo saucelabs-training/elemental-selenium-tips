@@ -1,4 +1,4 @@
-# Mace
+# Mac
 .DS_Store
 
 # IntelliJ
@@ -17,3 +17,4 @@ target/
 # Other
 output/
 *.zip
+*.lock
