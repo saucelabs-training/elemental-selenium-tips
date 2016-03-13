@@ -18,3 +18,7 @@ target/
 output/
 *.zip
 *.lock
+
+# Python
+.cache/
+__pycache__/
