@@ -2,12 +2,12 @@
 
 require 'selenium-webdriver'
 require 'browsermob/proxy'
-require 'rspec-expectations'
+require 'rspec/expectations'
 include RSpec::Matchers
 require 'json'
 
 def configure_proxy
-  proxy_binary = BrowserMob::Proxy::Server.new('../../vendor/browsermob-proxy/bin/browsermob-proxy')
+  proxy_binary = BrowserMob::Proxy::Server.new('../../vendor/browsermob-proxy/bin/browsermob-proxy', log: true)
   proxy_binary.start
   proxy_binary.create_proxy
 end
@@ -52,4 +52,4 @@ end
 
 performance_results = JSON.parse `yslow --info basic --format json #{@har_file}`
 performance_grade = performance_results["o"]
-performance_grade.should be > 90
+expect(performance_grade).to be > 90

@@ -18,3 +18,4 @@ target/
 output/
 *.zip
 *.lock
+.swp

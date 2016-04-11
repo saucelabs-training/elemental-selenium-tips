@@ -69,7 +69,7 @@ if "%JAVACMD%"=="" set JAVACMD=java
 
 if "%REPO%"=="" set REPO=%BASEDIR%\lib
 
-set CLASSPATH="%BASEDIR%"\etc;"%REPO%"\slf4j-jdk14-1.5.3.jar;"%REPO%"\slf4j-api-1.5.3.jar;"%REPO%"\sitebricks-0.8.3.jar;"%REPO%"\mvel2-2.0.18.jar;"%REPO%"\guava-r07.jar;"%REPO%"\annotations-7.0.3.jar;"%REPO%"\commons-httpclient-3.1.jar;"%REPO%"\commons-lang-2.5.jar;"%REPO%"\dom4j-1.6.1.jar;"%REPO%"\jaxen-1.1.1.jar;"%REPO%"\jdom-1.0.jar;"%REPO%"\xom-1.0.jar;"%REPO%"\xmlParserAPIs-2.6.2.jar;"%REPO%"\xalan-2.6.0.jar;"%REPO%"\icu4j-2.6.1.jar;"%REPO%"\saxpath-1.0-FCS.jar;"%REPO%"\servlet-api-2.5.jar;"%REPO%"\xstream-1.3.1.jar;"%REPO%"\xpp3_min-1.1.4c.jar;"%REPO%"\jsoup-1.4.1.jar;"%REPO%"\freemarker-2.3.10.jar;"%REPO%"\guice-multibindings-3.0.jar;"%REPO%"\jackson-core-asl-1.7.1.jar;"%REPO%"\jackson-mapper-asl-1.7.1.jar;"%REPO%"\httpclient-4.2.3.jar;"%REPO%"\httpcore-4.2.2.jar;"%REPO%"\commons-logging-1.1.1.jar;"%REPO%"\commons-codec-1.6.jar;"%REPO%"\httpmime-4.2.3.jar;"%REPO%"\commons-io-1.3.2.jar;"%REPO%"\jopt-simple-3.2.jar;"%REPO%"\ant-1.8.2.jar;"%REPO%"\ant-launcher-1.8.2.jar;"%REPO%"\bcprov-jdk15on-1.47.jar;"%REPO%"\jetty-server-7.3.0.v20110203.jar;"%REPO%"\jetty-continuation-7.3.0.v20110203.jar;"%REPO%"\jetty-http-7.3.0.v20110203.jar;"%REPO%"\jetty-io-7.3.0.v20110203.jar;"%REPO%"\jetty-util-7.3.0.v20110203.jar;"%REPO%"\jetty-servlet-7.3.0.v20110203.jar;"%REPO%"\jetty-security-7.3.0.v20110203.jar;"%REPO%"\guice-3.0.jar;"%REPO%"\javax.inject-1.jar;"%REPO%"\aopalliance-1.0.jar;"%REPO%"\guice-servlet-3.0.jar;"%REPO%"\jcip-annotations-1.0.jar;"%REPO%"\selenium-api-2.29.1.jar;"%REPO%"\json-20080701.jar;"%REPO%"\browsermob-proxy-2.0-beta-8.jar
+set CLASSPATH="%BASEDIR%"\etc;"%REPO%"\*
 set EXTRA_JVM_ARGUMENTS=
 goto endInit
 
