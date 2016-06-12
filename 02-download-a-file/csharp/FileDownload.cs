@@ -15,13 +15,13 @@ public class FileDownload
         FolderPath = @"C:\Temp\" + System.Guid.NewGuid().ToString();
         Directory.CreateDirectory(FolderPath);
 
-        FirefoxProfile profile = new FirefoxProfile();
+        FirefoxProfile Profile = new FirefoxProfile();
         profile.SetPreference("browser.download.dir", FolderPath);
         profile.SetPreference("browser.download.folderList", 2);
         profile.SetPreference("browser.helperApps.neverAsk.saveToDisk",
                               "image/jpeg, application/pdf, application/octet-stream");
         profile.SetPreference("pdfjs.disabled", true);
-        Driver = new FirefoxDriver(profile);
+        Driver = new FirefoxDriver(Profile);
     }
 
     [TearDown]
