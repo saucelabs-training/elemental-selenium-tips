@@ -28,7 +28,7 @@ public class FileDownloadRevisited
         var Request = (HttpWebRequest)WebRequest.Create(FileURL);
         Request.Method = "HEAD";
         WebResponse Response = Request.GetResponse();
-        Assert.That(Response.ContentType == "application/octet-stream");
-        Assert.That(Response.ContentLength > 0);
+        Assert.That(Response.ContentType.Equals("application/octet-stream"));
+        Assert.Greater(Response.ContentLength, 0);
     }
 }
