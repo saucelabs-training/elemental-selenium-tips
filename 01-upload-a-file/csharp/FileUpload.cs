@@ -12,6 +12,12 @@ public class FileUpload
         Driver = new FirefoxDriver();
     }
 
+    [TearDown]
+    public void TearDown()
+    {
+        Driver.Quit();
+    }
+
     [Test]
     public void UploadFileFromDisk()
     {
@@ -24,11 +30,5 @@ public class FileUpload
 
         IWebElement FileUploaded = Driver.FindElement(By.Id("uploaded-files"));
         Assert.IsTrue(FileUploaded.Text == File, "The File Did Not Upload Correctly");
-    }
-
-    [TearDown]
-    public void TearDown()
-    {
-        Driver.Quit();
     }
 }
