@@ -24,6 +24,13 @@ public class FileDownload
         Driver = new FirefoxDriver(profile);
     }
 
+    [TearDown]
+    public void TearDown()
+    {
+        Driver.Quit();
+        Directory.Delete(FolderPath, true);
+    }
+
     [Test]
     public void DownloadFileToDisk()
     {
@@ -38,13 +45,4 @@ public class FileDownload
             Assert.IsTrue(file.Length > 0, "File empty");
         }
     }
-
-    [TearDown]
-    public void TearDown()
-    {
-        Driver.Quit();
-        Directory.Delete(FolderPath, true);
-    }
-
-
 }
