@@ -2,36 +2,33 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace FileUpload
+public class FileUpload
 {
-    public class FileUpload
+    IWebDriver Driver;
+
+    [SetUp]
+    public void SetUp()
     {
-        IWebDriver Driver;
+        Driver = new FirefoxDriver();
+    }
 
-        [SetUp]
-        public void SetUp()
-        {
-            Driver = new FirefoxDriver();
-        }
+    [Test]
+    public void UploadFileFromDisk()
+    {
+        string File = "SomeFile.txt";
+        string FilePath = @"C:\Temp\" + File;
 
-        [Test]
-        public void UploadFileFromDisk()
-        {
-            string File = "SomeFile.txt";
-            string FilePath = @"C:\Temp\" + File;
+        Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/upload");
+        Driver.FindElement(By.Id("file-upload")).SendKeys(FilePath);
+        Driver.FindElement(By.Id("file-submit")).Click();
 
-            Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/upload");
-            Driver.FindElement(By.Id("file-upload")).SendKeys(FilePath);
-            Driver.FindElement(By.Id("file-submit")).Click();
+        IWebElement FileUploaded = Driver.FindElement(By.Id("uploaded-files"));
+        Assert.IsTrue(FileUploaded.Text == File, "The File Did Not Upload Correctly");
+    }
 
-            IWebElement FileUploaded = Driver.FindElement(By.Id("uploaded-files"));
-            Assert.IsTrue(FileUploaded.Text == File, "The File Did Not Upload Correctly");
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.Quit();
-        }
+    [TearDown]
+    public void TearDown()
+    {
+        Driver.Quit();
     }
 }
