@@ -14,6 +14,15 @@ public class Screenshot
         Driver = new FirefoxDriver();
     }
 
+    [TearDown]
+    public void TearDown()
+    {
+        if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            TakeScreenshot();
+
+        Driver.Quit();
+    }
+
     private void TakeScreenshot()
     {
         string SaveLocation = @"C:\Temp\" +
@@ -22,15 +31,6 @@ public class Screenshot
                                ".png";
         ITakesScreenshot ScreenshotDriver = (ITakesScreenshot) Driver;
         ScreenshotDriver.GetScreenshot().SaveAsFile(SaveLocation, ImageFormat.Png);
-    }
-
-    [TearDown]
-    public void TearDown()
-    {
-        if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
-            TakeScreenshot();
-
-        Driver.Quit();
     }
 
     [Test]
