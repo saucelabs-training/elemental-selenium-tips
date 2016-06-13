@@ -44,7 +44,7 @@ public class Checkboxes
     {
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/checkboxes");
         IWebElement Checkbox = Driver.FindElement(By.CssSelector("form input:nth-of-type(2)"));
-        Assert.That(Checkbox.GetAttribute("checked") == "true");
+        Assert.That(Checkbox.GetAttribute("checked").Equals("true"));
     }
 
     [Test]
