@@ -21,15 +21,7 @@ public class HighlightElements
         Driver.Quit();
     }
 
-    [Test]
-    public void HighlightElementExample()
-    {
-        Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/large");
-        IWebElement TargetElement = Driver.FindElement(By.Id("sibling-2.3"));
-        HighlightElement(TargetElement, 3);
-    }
-
-    private void HighlightElement(IWebElement Element, int Duration)
+    private void HighlightElement(IWebElement Element, int Duration = 3)
     {
         string OriginalStyle = Element.GetAttribute("style");
 
@@ -44,4 +36,13 @@ public class HighlightElements
                                "style",
                                OriginalStyle);
     }
+
+    [Test]
+    public void HighlightElementExample()
+    {
+        Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/large");
+        IWebElement TargetElement = Driver.FindElement(By.Id("sibling-2.3"));
+        HighlightElement(TargetElement);
+    }
+
 }
