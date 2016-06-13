@@ -17,7 +17,7 @@ public class Screenshot
     [TearDown]
     public void TearDown()
     {
-        if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+        if (TestContext.CurrentContext.Result.Outcome.Status.Equals(TestStatus.Failed))
             TakeScreenshot();
 
         Driver.Quit();
