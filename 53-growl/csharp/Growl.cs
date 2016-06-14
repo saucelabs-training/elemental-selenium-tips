@@ -27,7 +27,8 @@ public class Growl
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com");
 
         JSDriver.ExecuteScript("if (!window.jQuery) {" +
-                               "var jquery = document.createElement('script'); jquery.type = 'text/javascript';" +
+                               "var jquery = document.createElement('script');" +
+                               "jquery.type = 'text/javascript';" +
                                "jquery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js';" +
                                "document.getElementsByTagName('head')[0].appendChild(jquery);" +
                                "}");
