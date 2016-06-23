@@ -1,3 +1,6 @@
+
+
+
 import java.io.IOException;
 import org.junit.After;
 import org.junit.Before;
@@ -24,23 +27,25 @@ public class ForgotPassword {
     }
 
     @Test
-    public void withValidEmailAddress() throws MailosaurException, IOException, InterruptedException {
+    public void withValidEmailAddress() throws
+            MailosaurException, IOException, InterruptedException
+    {
         MailboxApi mailbox = new MailboxApi(
             System.getenv("MAILOSAUR_MAILBOX_ID"),
             System.getenv("MAILOSAUR_API_KEY"));
 
         driver.navigate().to("http://the-internet.herokuapp.com/forgot_password");
-
         String emailAddress = mailbox.generateEmailAddress();
         driver.findElement(By.id("email")).sendKeys(emailAddress);
         driver.findElement(By.id("form_submit")).click();
         Thread.sleep(15000); // allow time for email to be delivered by your email provider
 
         Email email = mailbox.getEmailsByRecipient(emailAddress)[0];
-
         System.out.println("Subject: " + email.subject);
         System.out.println("Body:");
         System.out.println(email.text);
     }
 
 }
+
+
