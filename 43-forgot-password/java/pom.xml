@@ -20,13 +20,13 @@
         <dependency>
             <groupId>com.mailosaur</groupId>
             <artifactId>mailosaur-java</artifactId>
-            <version>3.0.0</version>
-            <!--<exclusions>
-                <exclusion>
-                    <groupId>com.google.http-client</groupId>
-                    <artifactId>google-http-client</artifactId>
-                </exclusion>
-            </exclusions>-->
+            <version>3.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.5</version>
         </dependency>
 
     </dependencies>
