@@ -1,0 +1,21 @@
+{
+  "name": "02-download-a-file",
+  "version": "1.0.0",
+  "description": "How to download file using selenium",
+  "main": "index.js",
+  "scripts": {
+    "test": "SELENIUM_BROWSER=chrome mocha index.js --timeout 60000"
+  },
+  "author": "Gulshan Saini",
+  "license": "ISC",
+  "dependencies": {
+    "selenium-webdriver": "^2.53.3",
+    "mocha": ">= 1.21.x",
+    "express": "^4.11.2",
+    "multer": "^0.1.7",
+    "promises-aplus-tests": "^2.1.0",
+    "serve-index": "^1.6.1",
+    "sinon": "^1.17.2",
+    "chromedriver": "^2.21.2"
+  }
+}
