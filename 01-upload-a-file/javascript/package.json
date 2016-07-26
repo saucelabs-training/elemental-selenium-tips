@@ -16,8 +16,5 @@
     "promises-aplus-tests": "^2.1.0",
     "serve-index": "^1.6.1",
     "sinon": "^1.17.2"
-  },
-  "devDependencies": {
-    "chromedriver": "^2.21.2"
   }
 }
