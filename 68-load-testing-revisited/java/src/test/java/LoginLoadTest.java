@@ -20,7 +20,7 @@ import net.lightbody.bmp.proxy.CaptureType;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class Login {
+public class LoginLoadTest {
 
     WebDriver driver;
     BrowserMobProxy proxy;

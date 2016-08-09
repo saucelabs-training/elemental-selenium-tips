@@ -10,11 +10,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import java.io.IOException;
 import java.io.File;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import java.net.URL;
 
-public class Login {
+public class LoginGhostDriver {
 
     WebDriver driver;
 
