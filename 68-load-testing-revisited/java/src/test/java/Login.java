@@ -1,3 +1,5 @@
+package src.test.java;
+
 import java.io.File;
 import java.io.IOException;
 import net.lightbody.bmp.core.har.Har;

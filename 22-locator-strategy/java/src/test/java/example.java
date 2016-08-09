@@ -1,4 +1,4 @@
-package num22;
+package src.test.java;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
