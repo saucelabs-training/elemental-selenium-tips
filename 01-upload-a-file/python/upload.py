@@ -8,7 +8,7 @@ import unittest
 from selenium import webdriver
 
 
-class ES1_Upload(unittest.TestCase):
+class Upload(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()

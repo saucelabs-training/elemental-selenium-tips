@@ -11,7 +11,7 @@ import unittest
 from selenium import webdriver
 
 
-class ES2_Download(unittest.TestCase):
+class Download(unittest.TestCase):
 
     def setUp(self):
         self.download_dir = tempfile.mkdtemp()
@@ -40,8 +40,8 @@ class ES2_Download(unittest.TestCase):
         files = os.listdir(self.download_dir)
         files = [os.path.join(self.download_dir, f)
                  for f in files]  # add directory to each filename
-        assert len(files) > 0, "no files where downloaded"
-        assert os.path.getsize(files[0]) < 1, "downloaded file was empty"
+        assert len(files) > 0, "no files were downloaded"
+        assert os.path.getsize(files[0]) > 0, "downloaded file was empty"
 
 if __name__ == "__main__":
     unittest.main()

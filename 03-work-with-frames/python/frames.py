@@ -7,7 +7,7 @@ import unittest
 from selenium import webdriver
 
 
-class ES3_Frames(unittest.TestCase):
+class Frames(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()

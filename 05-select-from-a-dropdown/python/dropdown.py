@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.support.select import Select as WebDriverSelect
 
 
-class ES5_DropDown(unittest.TestCase):
+class DropDown(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()

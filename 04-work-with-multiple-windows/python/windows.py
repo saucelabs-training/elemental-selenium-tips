@@ -7,7 +7,7 @@ import unittest
 from selenium import webdriver
 
 
-class ES4_Windows(unittest.TestCase):
+class Windows(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()
