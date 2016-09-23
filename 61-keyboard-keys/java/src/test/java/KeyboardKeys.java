@@ -23,7 +23,7 @@ public class KeyboardKeys {
     }
 
     @Test
-    public void uploadFile() throws Exception {
+    public void KeyboardKeysExample() throws Exception {
         driver.get("http://the-internet.herokuapp.com/key_presses");
         // Option 1
         driver.findElement(By.id("content")).sendKeys(Keys.SPACE);
