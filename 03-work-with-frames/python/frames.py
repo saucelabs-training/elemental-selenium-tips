@@ -34,7 +34,7 @@ class Frames(unittest.TestCase):
         assert after_text != before_text, "%s equals %s" % (before_text, after_text)
 
         driver.switch_to.default_content()
-        assert driver.find_element_by_css_selector('h3').text != "", "h3 elemet should not be empty"
+        assert driver.find_element_by_css_selector('h3').text != "", "h3 element should not be empty"
 
 if __name__ == "__main__":
     unittest.main()
