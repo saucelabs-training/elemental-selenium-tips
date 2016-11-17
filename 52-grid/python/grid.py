@@ -3,7 +3,6 @@
 Implementation of http://elementalselenium.com/tips/52-grid
 """
 
-import os
 import unittest
 from selenium import webdriver
 
