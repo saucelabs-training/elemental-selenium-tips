@@ -19,7 +19,7 @@ target/
 output/
 *.zip
 *.lock
-.swp
+.**.swp
 .*.cs.swp
 
 ## Ignore Visual Studio temporary files, build results, and
