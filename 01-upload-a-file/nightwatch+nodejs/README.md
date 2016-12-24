@@ -1,4 +1,6 @@
 README for upload_file_using_nightwatchjs_plus_nodejs
+-------------------------------------------------
+
 Author: T.J. Maher <http://www.tjmaher.com/>, Software Engineer in Test, QA Engineer since 1996.
 
 The code in this subfolder tracks along with Dave Haefner's Elemental Selenium blog, Tip #1: How to Upload a File in Selenium <http://elementalselenium.com/tips/1-upload-a-file>, runs using Google Chrome, and is written in Nightwatch.js, Node.js, and JavaScript. 
