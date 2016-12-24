@@ -27,7 +27,8 @@ public class DownloadFileRevisited {
     @Test
     public void downloadFileRevisitedTest() throws Exception {
         driver.get("http://the-internet.herokuapp.com/download");
-        String link = driver.findElement(By.cssSelector(".example a:nth-of-type(1)")).getAttribute("href");
+        String link = driver.findElement(By.cssSelector(".example a:nth-of-type(1)")).
+                                            getAttribute("href");
 
         HttpClient httpClient = HttpClientBuilder.create().build();
         HttpHead request = new HttpHead(link);

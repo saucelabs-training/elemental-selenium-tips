@@ -31,8 +31,8 @@ public class Grid {
     @Test
     public void gridTest() {
         // Before running make sure Selenium Grid is running and it has at least one node with desired browser
-        // launch hub       java -jar ./vendor/selenium-server-standalone-2.48.2.jar -role hub
-        // register node    java -jar ./vendor/selenium-server-standalone-2.48.2.jar -role node -hub http://localhost:4444/grid/register
+        // launch hub       java -jar ./vendor/selenium-server-standalone.jar -role hub
+        // register node    java -jar ./vendor/selenium-server-standalone.jar -role node -hub http://localhost:4444/grid/register
 
         driver.get("http://the-internet.herokuapp.com/");
         assertThat(driver.getTitle(), is(equalTo("The Internet")));

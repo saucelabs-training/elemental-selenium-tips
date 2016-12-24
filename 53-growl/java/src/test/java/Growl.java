@@ -35,7 +35,9 @@ public class Growl {
         js.executeScript("$.getScript('http://the-internet.herokuapp.com/js/vendor/jquery.growl.js')");
 
         // Use jQuery to add jquery-growl styles to the page
-        js.executeScript("$('head').append('<link rel=\"stylesheet\" href=\"http://the-internet.herokuapp.com/css/jquery.growl.css\" type=\"text/css\" />');");
+        js.executeScript("$('head').append('<link rel=\"stylesheet\" " +
+                         "href=\"http://the-internet.herokuapp.com/css/jquery.growl.css\" " +
+                         "type=\"text/css\" />');");
 
         // jquery-growl w/ no frills
         js.executeScript("$.growl({ title: 'GET', message: '/' });");
