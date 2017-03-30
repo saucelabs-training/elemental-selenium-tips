@@ -14,7 +14,7 @@ describe('AB Opt Out Tests', function() {
     driver = await new Builder().forBrowser('chrome').build();
   });
 
-  afterEach(async function() {
+  after(async function() {
     await driver.quit();
   });
 
