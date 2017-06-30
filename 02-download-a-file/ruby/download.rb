@@ -14,7 +14,7 @@ def setup
   profile = Selenium::WebDriver::Firefox::Profile.new
   profile['browser.download.dir'] = @download_dir
   profile['browser.download.folderList'] = 2 # the last folder specified for download
-  profile['browser.helperApps.neverAsk.saveToDisk'] = 'images/jpeg, application/pdf'
+  profile['browser.helperApps.neverAsk.saveToDisk'] = 'image/jpeg, application/pdf'
   profile['pdfjs.disabled'] = true #need to set with PDFs or else it will view them in the browser
   @driver = Selenium::WebDriver.for :firefox, profile: profile
 
