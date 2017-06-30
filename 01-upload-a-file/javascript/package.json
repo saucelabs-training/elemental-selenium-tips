@@ -1,0 +1,23 @@
+{
+  "name": "Upload-a-file",
+  "version": "1.0.0",
+  "description": "An project to showcase uploading a file using official WebdriverJs",
+  "dependencies": {
+	  "moment": "^2.10.6",
+    "chai": "^3.4.1",
+    "mocha": "^2.3.3",
+    "selenium-webdriver":"3.3.0",
+    "path":"0.12.7",
+    "fs-extra": "0.22.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+	"url": ""
+  },
+  "author": "Manoj Kumar",
+  "license": "MIT"
+}
