@@ -1,0 +1,17 @@
+{
+  "name": "upload_file_using_nightwatchjs_plus_nodejs",
+  "version": "1.0.0",
+  "description": "Learning NightwatchJS and trying to help Elemental Selenium at the same time",
+  "author": "T.J. Maher",
+  "website": "http://www.tjmaher.com/",
+  "private": true,
+  "scripts": {
+    "tests": "./node_modules/.bin/nightwatch"
+  },
+  "dependencies": {
+    "nightwatch": "^0.9.11",
+    "selenium-server": "^2.53.1",
+    "chromedriver": "^2.0.0",
+    "geckodriver": "^1.2.0"
+  }
+}
