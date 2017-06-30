@@ -1,3 +1,5 @@
+package src.test.java;
+
 import java.io.File;
 import java.io.IOException;
 import net.lightbody.bmp.core.har.Har;
@@ -18,7 +20,7 @@ import net.lightbody.bmp.proxy.CaptureType;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class Login {
+public class LoginLoadTest {
 
     WebDriver driver;
     BrowserMobProxy proxy;

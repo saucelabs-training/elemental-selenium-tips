@@ -1,3 +1,5 @@
+package src.test.java;
+
 import net.lightbody.bmp.core.har.HarEntry;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;

@@ -1,4 +1,4 @@
-package num10;
+package src.test.java;
 
 import org.junit.After;
 import org.junit.Before;
@@ -10,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 /**
  * Created by andrew on 8/22/15.
  */
-public class example {
+public class RetryTestActions {
     public class WorkWithBasicAuth {
         WebDriver driver;
 
@@ -20,7 +20,7 @@ public class example {
         }
 
         @Test
-        public void RetryTestActions() {
+        public void retryTestActionsTest() {
             driver.get("http://the-internet.herokuapp.com/notification_message");
             assert retryIfNotificationMessageContains("please try again");
         }
