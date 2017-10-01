@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Implementation of http://elementalselenium.com/tips/1-upload-a-file
+Implementation of http://elementalselenium.com/tips/19-data-driven-testing
 """
 
 import csv
