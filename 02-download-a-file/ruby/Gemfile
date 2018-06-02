@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'selenium-webdriver', '~> 2.48.1'
-gem 'rspec-expectations'
+gem 'selenium-webdriver', '3.4.4'
+gem 'rspec'
 gem 'uuid'
