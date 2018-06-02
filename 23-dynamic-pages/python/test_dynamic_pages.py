@@ -7,7 +7,7 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions
 
 
 class Upload(unittest.TestCase):
@@ -24,24 +24,20 @@ class Upload(unittest.TestCase):
         assert driver.find_element_by_css_selector('#start button').is_displayed()
         assert not driver.find_element_by_id("finish").is_displayed()
         driver.find_element_by_css_selector('#start button').click()
-        try:
-            element = WebDriverWait(driver, 6).until(
-                EC.visibility_of_element_located((By.ID, "finish"))
-            )
-        finally:
-            assert driver.find_element_by_id("finish").is_displayed()
+        WebDriverWait(driver, 6).until(
+            expected_conditions.visibility_of_element_located((By.ID, "finish"))
+        )
+        assert driver.find_element_by_id("finish").is_displayed()
 
     def test_dynamic_page_2(self):
         driver = self.driver
         driver.get('http://the-internet.herokuapp.com/dynamic_loading/2')
         assert driver.find_element_by_css_selector('#start button').is_displayed()
         driver.find_element_by_css_selector('#start button').click()
-        try:
-            element = WebDriverWait(driver, 6).until(
-                EC.visibility_of_element_located((By.ID, "finish"))
-            )
-        finally:
-            assert driver.find_element_by_id("finish").is_displayed()
+        WebDriverWait(driver, 6).until(
+            expected_conditions.visibility_of_element_located((By.ID, "finish"))
+        )
+        assert driver.find_element_by_id("finish").is_displayed()
 
 
 if __name__ == "__main__":
