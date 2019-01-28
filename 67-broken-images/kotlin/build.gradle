@@ -47,6 +47,12 @@ dependencies {
     compile group: 'net.lightbody.bmp', name: 'browsermob-proxy', version: '2.1.5', ext: 'pom'
     // https://mvnrepository.com/artifact/net.lightbody.bmp/browsermob-core
     compile group: 'net.lightbody.bmp', name: 'browsermob-core', version: '2.1.5'
+
+    /* Apache components */
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
 }
 
 compileKotlin {
