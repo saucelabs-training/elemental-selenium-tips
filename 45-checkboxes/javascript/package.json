@@ -1,0 +1,9 @@
+{
+  "name": "Upload-a-file",
+  "version": "1.0.0",
+  "description": "A project to showcase uploading a file using official WebdriverJs",
+  "dependencies": {
+    "mocha": "^6.1.4",
+    "selenium-webdriver":"4.0.0-alpha.1"
+  }
+}
