@@ -9,6 +9,7 @@ import shutil
 import tempfile
 import unittest
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 
 
 class Download(unittest.TestCase):
@@ -16,6 +17,7 @@ class Download(unittest.TestCase):
     def setUp(self):
         self.download_dir = tempfile.mkdtemp()
 
+        options = Options()
         profile = webdriver.FirefoxProfile()
         profile.set_preference("browser.download.dir", self.download_dir)
         profile.set_preference("browser.download.folderList", 2)
@@ -23,7 +25,8 @@ class Download(unittest.TestCase):
             "browser.helperApps.neverAsk.saveToDisk",
             "images/jpeg, application/pdf, application/octet-stream")
         profile.set_preference("pdfjs.disabled", True)
-        self.driver = webdriver.Firefox(firefox_profile=profile)
+        options.profile = profile
+        self.driver = webdriver.Firefox(options=options)
 
     def tearDown(self):
         self.driver.quit()
