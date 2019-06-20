@@ -5,7 +5,7 @@ Implementation of http://elementalselenium.com/tips/8-download-a-file-revisited
 
 import unittest
 from selenium import webdriver
-import httplib # Use http.client if using Python 3.x.x
+import http.client # Use httplib if using Python 2.x.x
 
 
 class FileDownloadRevisited(unittest.TestCase):
@@ -21,11 +21,12 @@ class FileDownloadRevisited(unittest.TestCase):
         driver.get('http://the-internet.herokuapp.com/download')
         download_link = driver.find_element_by_css_selector('.example a').get_attribute('href')
 
-        connection = httplib.HTTPConnection('the-internet.herokuapp.com')
+        connection = http.client.HTTPConnection('the-internet.herokuapp.com')
         connection.request('HEAD', download_link)
         response = connection.getresponse()
+        connection.close()
         content_type = response.getheader('Content-type')
-        content_length = response.getheader('Content-length')
+        content_length = int(response.getheader('Content-length'))
 
         assert content_type == 'application/octet-stream'
         assert content_length > 0
