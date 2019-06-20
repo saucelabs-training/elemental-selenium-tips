@@ -14,7 +14,7 @@ class ScreenShotOnFailure(unittest.TestCase):
         self.driver = webdriver.Firefox()
 
     def tearDown(self):
-        if sys.exc_info()[0]:
+        if self._outcome.errors:
             self.driver.save_screenshot("failshot_%s.png" % self._testMethodName)
         self.driver.quit()
 
