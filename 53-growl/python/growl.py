@@ -38,9 +38,11 @@ class Growl(unittest.TestCase):
             "href=http://the-internet.herokuapp.com/css/jquery.growl.css "
             "type=text/css />');")
 
+        # add delay for resource loading
+        time.sleep(1)
+
         # jquery-growl w/ no frills
         driver.execute_script("$.growl({ title: 'GET', message: '/' });")
-
 
         # jquery-growl w/ colorized output
         driver.execute_script("$.growl.error({ title: 'ERROR', message: 'your error message goes here' });")
