@@ -21,12 +21,7 @@ class RightClick(unittest.TestCase):
         driver = self.driver
         driver.get('http://the-internet.herokuapp.com/context_menu')
         menu_area = driver.find_element_by_id('hot-spot')
-        ActionChains(driver).context_click(
-            menu_area).send_keys(
-            Keys.ARROW_DOWN).send_keys(
-            Keys.ARROW_DOWN).send_keys(
-            Keys.ARROW_DOWN).send_keys(
-            Keys.ENTER).perform()
+        ActionChains(driver).context_click(menu_area).perform()
         alert = driver.switch_to.alert
         assert alert.text == 'You selected a context menu'
 
