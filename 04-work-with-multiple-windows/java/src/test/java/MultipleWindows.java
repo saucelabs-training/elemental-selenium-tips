@@ -24,9 +24,10 @@ public class MultipleWindows {
     }
 
     @Test
-    public void multipleWindows() {
+    public void multipleWindows() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/windows");
         driver.findElement(By.cssSelector(".example a")).click();
+        Thread.sleep(2000);
         Object[] allWindows = driver.getWindowHandles().toArray();
         driver.switchTo().window(allWindows[0].toString());
         assertThat(driver.getTitle(), is(not("New Window")));
@@ -35,7 +36,7 @@ public class MultipleWindows {
     }
 
     @Test
-    public void multipleWindowsRedux() {
+    public void multipleWindowsRedux() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/windows");
 
         // Get initial window handle
@@ -44,6 +45,8 @@ public class MultipleWindows {
         String newWindow = "";
         // Trigger new window to open
         driver.findElement(By.cssSelector(".example a")).click();
+        // Add delay to account for new window load time
+        Thread.sleep(2000);
         // Grab all window handles
         Set<String> allWindows = driver.getWindowHandles();
 
