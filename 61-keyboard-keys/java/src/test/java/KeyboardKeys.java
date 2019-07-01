@@ -28,7 +28,7 @@ public class KeyboardKeys {
     public void KeyboardKeysExample() throws Exception {
         driver.get("http://the-internet.herokuapp.com/key_presses");
         // Option 1
-        driver.findElement(By.id("content")).sendKeys(Keys.SPACE);
+        driver.findElement(By.id("target")).sendKeys(Keys.SPACE);
         assertThat(driver.findElement(By.id("result")).getText(), is("You entered: SPACE"));
         // Option 2
         Actions builder = new Actions(driver);
