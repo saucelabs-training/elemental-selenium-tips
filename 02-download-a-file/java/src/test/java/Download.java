@@ -7,11 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
-// Chrome import statements
-//import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.chrome.ChromeOptions;
-//import java.util.HashMap;
-//import java.util.Map;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import java.io.File;
@@ -27,25 +23,16 @@ public class Download {
         folder = new File(UUID.randomUUID().toString());
         folder.mkdir();
 
-//        Firefox
+        FirefoxOptions options = new FirefoxOptions();
         FirefoxProfile profile = new FirefoxProfile();
         profile.setPreference("browser.download.dir", folder.getAbsolutePath());
         profile.setPreference("browser.download.folderList", 2);
         profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
                 "image/jpeg, application/pdf, application/octet-stream");
         profile.setPreference("pdfjs.disabled", true);
-        driver = new FirefoxDriver(profile);
+        options.setProfile(profile);
+        driver = new FirefoxDriver(options);
 
-//        Chrome
-//        System.setProperty("webdriver.chrome.driver", "vendor/chrome-driver-2.15/chromedriver_linux64");
-//        ChromeOptions options = new ChromeOptions();
-//        Map<String, Object> prefs = new HashMap<>();
-//        prefs.put("profile.default_content_settings.popups", 0);
-//        prefs.put("download.default_directory", folder.getAbsolutePath());
-//        options.setExperimentalOption("prefs", prefs);
-//        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-//        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-//        driver = new ChromeDriver(capabilities);
     }
 
     @After
