@@ -15,8 +15,8 @@ public class Grid {
 
     @Before
     public void setUp() throws Exception {
-        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        //  capabilities.setBrowserName("firefox");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setBrowserName("firefox");
         //  capabilities.setPlatform(Platform.LINUX);
         //  capabilities.setVersion("3.6")
         //  capabilities.setCapability(,);
