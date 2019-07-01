@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -16,7 +16,7 @@ public class ABTestOptOut {
 
     @Before
     public void setUp() throws Exception {
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
     }
 
     @After
