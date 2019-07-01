@@ -41,6 +41,9 @@ public class Growl {
                          "href=\"http://the-internet.herokuapp.com/css/jquery.growl.css\" " +
                          "type=\"text/css\" />');");
 
+        // Add small delay for jquery-growl loading
+        Thread.sleep(1000);
+
         // jquery-growl w/ no frills
         js.executeScript("$.growl({ title: 'GET', message: '/' });");
 
