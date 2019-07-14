@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
-using System.Collections.Generic;
+using System.Threading;
 
 public class MultipleWindows
 {
@@ -41,6 +41,7 @@ public class MultipleWindows
         string SecondWindow = "";
 
         Driver.FindElement(By.CssSelector(".example a")).Click();
+        Thread.Sleep(1000); // to account for window loading time
 
         var Windows = Driver.WindowHandles;
         foreach(var Window in Windows)

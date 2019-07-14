@@ -25,7 +25,7 @@ public class KeyboardKeys
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/key_presses");
 
         // Option 1
-        Driver.FindElement(By.Id("content")).SendKeys(Keys.Space);
+        Driver.FindElement(By.Id("target")).SendKeys(Keys.Space);
         Assert.That(Driver.FindElement(By.Id("result")).Text.Equals("You entered: SPACE"));
 
         // Option 2

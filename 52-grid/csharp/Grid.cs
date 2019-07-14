@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 using System;
 
@@ -10,10 +11,9 @@ public class Grid
     [SetUp]
     public void SetUp()
     {
-        DesiredCapabilities Capabilities = new DesiredCapabilities();
-        Capabilities.SetCapability(CapabilityType.BrowserName, "firefox");
+        var Options = new FirefoxOptions();
         string GridURL = "http://localhost:4444/wd/hub";
-        Driver = new RemoteWebDriver(new Uri(GridURL), Capabilities);
+        Driver = new RemoteWebDriver(new Uri(GridURL), Options.ToCapabilities());
     }
 
     [TearDown]

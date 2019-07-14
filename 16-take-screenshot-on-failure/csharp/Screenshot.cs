@@ -2,7 +2,6 @@
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
-using System.Drawing.Imaging;
 
 public class Screenshot
 {
@@ -25,12 +24,11 @@ public class Screenshot
 
     private void TakeScreenshot()
     {
-        string SaveLocation = @"C:\Temp\" +
-                               "failshot_" +
-                               TestContext.CurrentContext.Test.FullName +
-                               ".png";
+        string TestName     = TestContext.CurrentContext.Test.FullName;
+        string SaveLocation = System.Environment.CurrentDirectory + 
+          $"/../../../failshot_{TestName}.png";
         ITakesScreenshot ScreenshotDriver = (ITakesScreenshot) Driver;
-        ScreenshotDriver.GetScreenshot().SaveAsFile(SaveLocation, ImageFormat.Png);
+        ScreenshotDriver.GetScreenshot().SaveAsFile(SaveLocation);
     }
 
     [Test]

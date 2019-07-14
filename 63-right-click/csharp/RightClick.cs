@@ -25,14 +25,7 @@ public class RightClick
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/context_menu");
         IWebElement MenuArea = Driver.FindElement(By.Id("hot-spot"));
         Actions Builder = new Actions(Driver);
-        Builder.ContextClick(MenuArea)
-            .SendKeys(Keys.ArrowDown)
-            .SendKeys(Keys.ArrowDown)
-            .SendKeys(Keys.ArrowDown)
-            .SendKeys(Keys.ArrowDown)
-            .SendKeys(Keys.ArrowDown)
-            .SendKeys(Keys.Enter)
-            .Perform();
+        Builder.ContextClick(MenuArea).Perform();
         IAlert Alert = Driver.SwitchTo().Alert();
         Assert.That(Alert.Text.Equals("You selected a context menu"));
     }

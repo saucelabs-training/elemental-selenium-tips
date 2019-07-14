@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using System.Threading;
 
 public class ABTestOptOut
 {
@@ -45,6 +46,7 @@ public class ABTestOptOut
     {
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/abtest?optimizely_opt_out=true");
         Driver.SwitchTo().Alert().Dismiss();
+        Thread.Sleep(1000); // to account for tranition to page load start
         string HeadingText = Driver.FindElement(By.TagName("h3")).Text;
         Assert.That(HeadingText.StartsWith("No A/B Test"));
     }

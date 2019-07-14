@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
@@ -22,7 +23,7 @@ public class FileUpload
     public void UploadFileFromDisk()
     {
         string File = "SomeFile.txt";
-        string FilePath = @"C:\Temp\" + File;
+        string FilePath = System.Environment.CurrentDirectory + $"/../../../{File}";
 
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/upload");
         Driver.FindElement(By.Id("file-upload")).SendKeys(FilePath);

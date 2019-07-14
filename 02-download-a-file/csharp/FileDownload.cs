@@ -12,16 +12,19 @@ public class FileDownload
     [SetUp]
     public void SetUp()
     {
-        FolderPath = @"C:\Temp\" + System.Guid.NewGuid().ToString();
+        FolderPath = System.Environment.CurrentDirectory + 
+            $"/../../../{System.Guid.NewGuid().ToString()}";
         Directory.CreateDirectory(FolderPath);
 
         FirefoxProfile Profile = new FirefoxProfile();
-        profile.SetPreference("browser.download.dir", FolderPath);
-        profile.SetPreference("browser.download.folderList", 2);
-        profile.SetPreference("browser.helperApps.neverAsk.saveToDisk",
+        Profile.SetPreference("browser.download.dir", FolderPath);
+        Profile.SetPreference("browser.download.folderList", 2);
+        Profile.SetPreference("browser.helperApps.neverAsk.saveToDisk",
                               "image/jpeg, application/pdf, application/octet-stream");
-        profile.SetPreference("pdfjs.disabled", true);
-        Driver = new FirefoxDriver(Profile);
+        Profile.SetPreference("pdfjs.disabled", true);
+        FirefoxOptions Options = new FirefoxOptions();
+        Options.Profile = Profile;
+        Driver = new FirefoxDriver(Options);
     }
 
     [TearDown]

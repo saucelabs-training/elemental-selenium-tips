@@ -22,8 +22,8 @@ public class Frames
     public void NestedFrames()
     {
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/nested_frames");
-        Driver.SwitchTo().Frame("frame-top");
-        Driver.SwitchTo().Frame("frame-middle");
+        Driver.SwitchTo().Frame(Driver.FindElement(By.Name("frame-top")));
+        Driver.SwitchTo().Frame(Driver.FindElement(By.Name("frame-middle")));
         Assert.That(Driver.FindElement(By.Id("content")).Text.Equals("MIDDLE"));
     }
 
@@ -31,7 +31,7 @@ public class Frames
     public void Iframes()
     {
         Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/tinymce");
-        Driver.SwitchTo().Frame("mce_0_ifr");
+        Driver.SwitchTo().Frame(Driver.FindElement(By.Id("mce_0_ifr")));
         IWebElement Editor = Driver.FindElement(By.Id("tinymce"));
         string StartText = Editor.Text;
         Editor.Clear();

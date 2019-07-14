@@ -36,10 +36,11 @@ public class Growl
         JSDriver.ExecuteScript("$('head').append(\"<link rel='stylesheet' " +
                                "href='http://the-internet.herokuapp.com/css/jquery.growl.css' " +
                                "type='text/css' />\");");
+        Thread.Sleep(1000); // to allow for resource loading
         JSDriver.ExecuteScript("$.growl({ title: 'GET', message: '/' });");
         JSDriver.ExecuteScript("$.growl.error({ title: 'ERROR', message: 'your message goes here' });");
         JSDriver.ExecuteScript("$.growl.notice({ title: 'Notice', message: 'your notice message goes here' });");
         JSDriver.ExecuteScript("$.growl.notice({ title: 'Warning!', message: 'your warning message goes here' });");
-        Thread.Sleep(5000);
+        Thread.Sleep(5000); // to see the notifications
     }
 }
