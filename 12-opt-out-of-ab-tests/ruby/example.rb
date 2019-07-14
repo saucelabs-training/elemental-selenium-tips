@@ -36,5 +36,6 @@ end
 run do
   @driver.get 'http://the-internet.herokuapp.com/abtest?optimizely_opt_out=true'
   @driver.switch_to.alert.dismiss
+  sleep 1
   expect(@driver.find_element(css: 'h3').text).to eql('No A/B Test')
 end

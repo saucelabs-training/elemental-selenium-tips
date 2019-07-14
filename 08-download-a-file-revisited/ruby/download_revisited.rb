@@ -21,6 +21,6 @@ run do
   @driver.get 'http://the-internet.herokuapp.com/download'
   link = @driver.find_element(css: '.example a').attribute('href')
   response = RestClient.head link
-  expect(response.headers[:content_type]).to eql('application/pdf')
+  expect(response.headers[:content_type]).to eql('application/octet-stream')
   expect(response.headers[:content_length].to_i).to be > 0
 end

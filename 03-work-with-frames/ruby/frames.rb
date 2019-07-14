@@ -18,14 +18,16 @@ end
 
 run do
   @driver.get 'http://the-internet.herokuapp.com/nested_frames'
-  @driver.switch_to.frame('frame-top')
-  @driver.switch_to.frame('frame-middle')
+  frame_top = @driver.find_element(name: 'frame-top')
+  @driver.switch_to.frame(frame_top)
+  frame_middle = @driver.find_element(name: 'frame-middle')
+  @driver.switch_to.frame(frame_middle)
   expect(@driver.find_element(id: 'content').text).to eql 'MIDDLE'
 end
 
 run do
   @driver.get 'http://the-internet.herokuapp.com/tinymce'
-  @driver.switch_to.frame('mce_0_ifr')
+  @driver.switch_to.frame(@driver.find_element(id: 'mce_0_ifr'))
   editor = @driver.find_element(id: 'tinymce')
   before_text = editor.text
   editor.clear

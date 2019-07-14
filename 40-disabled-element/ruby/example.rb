@@ -1,6 +1,5 @@
 require 'selenium-webdriver'
-require 'rspec-expectations'
-
+require 'rspec/expectations'
 include RSpec::Matchers
 
 def setup

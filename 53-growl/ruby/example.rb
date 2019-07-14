@@ -1,8 +1,6 @@
 # Encoding: utf-8
 
 require 'selenium-webdriver'
-require 'rspec-expectations'
-include RSpec::Matchers
 
 def setup
   @driver = Selenium::WebDriver.for :firefox
@@ -33,6 +31,9 @@ run do
 
   # use jQuery to add jquery-growl styles to the page
   @driver.execute_script("$('head').append('<link rel=\"stylesheet\" href=\"http://the-internet.herokuapp.com/css/jquery.growl.css\" type=\"text/css\" />');")
+
+  # add delay for resource loading
+  sleep 1
 
   # jquery-growl w/ no frills
   @driver.execute_script("$.growl({ title: 'GET', message: '/' });")

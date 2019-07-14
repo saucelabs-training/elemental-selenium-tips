@@ -20,7 +20,7 @@ end
 
 run do
   @driver.get 'http://the-internet.herokuapp.com/key_presses'
-  @driver.find_element(class: 'example').send_keys :space
+  @driver.find_element(id: 'target').send_keys :space
   expect(@driver.find_element(id: 'result').text).to eql('You entered: SPACE')
   @driver.action.send_keys(:tab).perform
   expect(@driver.find_element(id: 'result').text).to eql('You entered: TAB')
