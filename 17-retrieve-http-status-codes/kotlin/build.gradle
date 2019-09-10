@@ -1,0 +1,43 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.10'
+}
+
+group 'com.kotlin.selenium'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test
+    testCompile group: 'org.jetbrains.kotlin', name: 'kotlin-test', version: '1.3.11'
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test-common
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-test-common', version: '1.3.11'
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test-annotations-common
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-test-annotations-common', version: '1.3.11'
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test-junit
+    testCompile group: 'org.jetbrains.kotlin', name: 'kotlin-test-junit', version: '1.3.11'
+    // https://mvnrepository.com/artifact/com.aventstack/extentreports
+    compile group: 'com.aventstack', name: 'extentreports', version: '4.0.6'
+    // https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot
+    compile group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.4'
+    // https://mvnrepository.com/artifact/net.lightbody.bmp/browsermob-proxy
+    compile group: 'net.lightbody.bmp', name: 'browsermob-proxy', version: '2.1.5', ext: 'pom'
+    // https://mvnrepository.com/artifact/net.lightbody.bmp/browsermob-core
+    compile group: 'net.lightbody.bmp', name: 'browsermob-core', version: '2.1.5'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
